@@ -1,0 +1,19 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@protocol {{ prefix }}{{ module_info.name }}ViewOutput;
+
+@interface {{ prefix }}{{ module_info.name }}DataDisplayManager : NSObject
+
+@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
+
+- (void)displayData:(NSArray *)data inTableView:(UITableView *)tableView;
+
+@end

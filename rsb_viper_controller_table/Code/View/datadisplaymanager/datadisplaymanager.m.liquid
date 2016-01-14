@@ -1,0 +1,36 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+#import "{{ prefix }}{{ module_info.name }}DataDisplayManager.h"
+#import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
+
+#import <RSBTableViewManager/RSBTableViewManager.h>
+#import <RSBTableViewManager/RSBTableViewSectionItem.h>
+
+@interface {{ prefix }}{{ module_info.name }}DisplayManager ()
+
+@property (nonatomic) RSBTableViewManager *tableViewManager;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}DataDisplayManager
+
+- (void)displayData:(NSArray *)data inTableView:(UITableView *)tableView {
+    self.tableViewManager = [[RSBTableViewManager alloc] initWithTableView:tableView];
+    
+    NSMutableArray *cellItems = [NSMutableArray array];
+    for (id object in data) {
+        // create cell items here
+        // and add them to 
+    }
+    
+    RSBTableViewSectionItem *sectionItem = [[RSBTableViewSectionItem alloc] initWithCellItems:[NSArray arrayWithArray:cellItems]];
+    [self.tableViewManager setSectionItems:@[sectionItem]];
+}
+
+@end

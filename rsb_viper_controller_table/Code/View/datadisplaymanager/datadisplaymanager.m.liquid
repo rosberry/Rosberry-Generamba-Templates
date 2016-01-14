@@ -11,6 +11,7 @@
 
 #import <RSBTableViewManager/RSBTableViewManager.h>
 #import <RSBTableViewManager/RSBTableViewSectionItem.h>
+#import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItem.h"
 
 @interface {{ prefix }}{{ module_info.name }}DataDisplayManager ()
 
@@ -25,8 +26,12 @@
     
     NSMutableArray *cellItems = [NSMutableArray array];
     for (id object in data) {
-        // create cell items here
-        // and add them to cellItems array
+        {{ prefix }}{{ module_info.name }}BaseTableViewCellItem *cellItem = [[{{ prefix }}{{ module_info.name }}BaseTableViewCellItem alloc] init];
+        [cellItem setItemDidSelectBlock:^(__weak UITableView *tableView, NSIndexPath *indexPath) {
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            // handle did select here
+        }];
+        [cellItems addObject:cellItem];
     }
     
     RSBTableViewSectionItem *sectionItem = [[RSBTableViewSectionItem alloc] initWithCellItems:[NSArray arrayWithArray:cellItems]];

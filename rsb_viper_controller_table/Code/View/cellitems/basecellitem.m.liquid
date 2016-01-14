@@ -1,0 +1,41 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+#import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItem.h"
+
+@implementation {{ prefix }}{{ module_info.name }}BaseTableViewCellItem
+
+- (void)configureCell:(UITableViewCell *)cell {
+	// Configure your cell here
+}
+
+- (CGFloat)heightForTableView:(UITableView *)tableView {
+    return 0;
+}
+
+- (UITableViewCell *)cellForTableView:(UITableView *)tableView {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[[self class] cellReuseIdentifier]];
+    [self configureCell:cell];
+    return cell;
+}
+
+- (void)didSelectInTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+    if (self.itemDidSelectBlock){
+        self.itemDidSelectBlock(tableView, indexPath);
+    }
+}
+
++ (void)registerCellForTableView:(UITableView *)tableView {
+    [tableView registerNib:[UINib nibWithNibName:[self cellReuseIdentifier] bundle:nil] forCellReuseIdentifier:[self cellReuseIdentifier]];
+}
+
++ (NSString *)cellReuseIdentifier {
+    return NSStringFromClass([HelpTableViewCell class]);
+}
+
+@end

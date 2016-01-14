@@ -2,7 +2,7 @@
 name: "rsb_viper_controller_table"
 summary: "VIPER module template with UIViewController playing as a View. If ViewController with tableView and you use RSBTableViewManager this is right choice."
 author: "Anton Kovalev"
-version: "1.0"
+version: "1.1"
 license: "MIT"
 
 # The declarations for code files
@@ -18,6 +18,8 @@ code_files:
 - {name: View/ViewController.m, path: Code/View/viewcontroller.m.liquid}
 - {name: View/DataDisplayManager/DataDisplayManager.h, path: Code/View/datadisplaymanager/datadisplaymanager.h.liquid}
 - {name: View/DataDisplayManager/DataDisplayManager.m, path: Code/View/datadisplaymanager/datadisplaymanager.m.liquid}
+- {name: View/Cell Items/BaseTableViewCellItem.h, path: Code/View/cellitems/basecellitem.h.liquid}
+- {name: View/Cell Items/BaseTableViewCellItem.m, path: Code/View/cellitems/basecellitem.m.liquid}
 
 # Presenter layer
 - {name: Presenter/ModuleInput.h, path: Code/Presenter/module_input.h.liquid}

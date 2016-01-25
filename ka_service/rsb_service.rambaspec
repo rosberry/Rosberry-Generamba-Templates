@@ -1,0 +1,12 @@
+# Template information section
+name: "rsb_service"
+summary: "Create simple service and implementation"
+author: "Anton Kovalev"
+version: "1.1"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: Service.h, path: Code/service.h.liquid}
+- {name: ServiceImplementation.h, path: Code/service_implementation.h.liquid}
+- {name: ServiceImplementation.m, path: Code/service_implementation.m.liquid}

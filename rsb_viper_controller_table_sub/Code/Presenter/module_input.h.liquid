@@ -1,0 +1,20 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
+
+@protocol {{ prefix }}{{ module_info.name }}ModuleInput <RamblerViperModuleInput>
+
+/**
+ * @author {{ developer.name }}
+ * 
+ * Method for initial module configuration.
+ */
+- (void)configureModule;
+
+/*!
+ * @discussion Method asks presenter to give section items for objects.
+ */
+- (NSArray *)sectionItemsForObjects:(NSArray *)objects;
+
+@end

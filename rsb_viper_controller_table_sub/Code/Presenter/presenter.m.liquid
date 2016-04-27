@@ -15,6 +15,12 @@
     // Initial module configuration. Independed from view state.
 }
 
+- (NSArray *)sectionItemsForObjects:(NSArray *)objects {
+    NSArray *sectionItems = [self.sectionItemsFactory sectionItemsForObjects:objects];
+    [self.view setupEventsHandlingForSectionItems:sectionItems];
+    return sectionItems;
+}
+
 #pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods
 
 - (void)didTriggerViewReadyEvent {

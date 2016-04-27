@@ -1,0 +1,18 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
+#import <RSBTableViewSectionItem.h>
+
+@implementation {{ prefix }}{{ module_info.name }}SectionItemsFactory
+
+- (NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItemsForObjects:(NSArray *)objects {
+    NSArray *cellItems = [self.cellItemsFactory cellItemsFromObjects:objects];
+    
+    RSBTableViewSectionItem *sectionItem = [[RSBTableViewSectionItem alloc] initWithCellItems:cellItems];
+    NSArray *sectionItems = @[sectionItem];
+    
+    return sectionItems;
+}
+
+@end

@@ -1,31 +1,24 @@
-//
-//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
-//
+{% include 'header' %}
 
 #import "{{ prefix }}{{ module_info.name }}Presenter.h"
-
 #import "{{ prefix }}{{ module_info.name }}ViewInput.h"
 #import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
 #import "{{ prefix }}{{ module_info.name }}RouterInput.h"
 
 @implementation {{ prefix }}{{ module_info.name }}Presenter
 
-#pragma mark - Методы {{ prefix }}{{ module_info.name }}ModuleInput
+#pragma mark - {{ prefix }}{{ module_info.name }}ModuleInput methods
 
 - (void)configureModule {
-    // Стартовая конфигурация модуля, не привязанная к состоянию view
+    // Initial module configuration. Independed from view state.
 }
 
-#pragma mark - Методы {{ prefix }}{{ module_info.name }}ViewOutput
+#pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods
 
 - (void)didTriggerViewReadyEvent {
 	[self.view setupInitialState];
 }
 
-#pragma mark - Методы {{ prefix }}{{ module_info.name }}InteractorOutput
+#pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods
 
 @end

@@ -1,19 +1,14 @@
-//
-//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
-//
+{% include 'header' %}
 
 #import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
 
-@protocol {{ prefix }}{{ module_info.name }}ModuleInput <NSObject>
+@protocol {{ prefix }}{{ module_info.name }}ModuleInput <RamblerViperModuleInput>
 
 /**
- @author {{ developer.name }}
-
- Метод инициирует стартовую конфигурацию текущего модуля
+ * @author {{ developer.name }}
+ * 
+ * Method for initial module configuration.
  */
 - (void)configureModule;
 

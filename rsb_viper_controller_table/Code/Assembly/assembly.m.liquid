@@ -1,19 +1,11 @@
-//
-//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
-//
+{% include 'header' %}
 
 #import "{{ prefix }}{{ module_info.name }}Assembly.h"
-
 #import "{{ prefix }}{{ module_info.name }}ViewController.h"
 #import "{{ prefix }}{{ module_info.name }}DataDisplayManager.h"
 #import "{{ prefix }}{{ module_info.name }}Interactor.h"
 #import "{{ prefix }}{{ module_info.name }}Presenter.h"
 #import "{{ prefix }}{{ module_info.name }}Router.h"
-
 #import <ViperMcFlurry/ViperMcFlurry.h>
 
 @implementation {{ prefix }}{{ module_info.name }}Assembly

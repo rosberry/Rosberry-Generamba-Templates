@@ -1,10 +1,4 @@
-//
-//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
-//  {{ module_info.project_name }}
-//
-//  Created by {{ developer.name }} on {{ date }}.
-//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
-//
+{% include 'header' %}
 
 #import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItem.h"
 
@@ -19,15 +13,7 @@
 }
 
 - (UITableViewCell *)cellForTableView:(UITableView *)tableView {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[[self class] cellReuseIdentifier]];
-    [self configureCell:cell];
-    return cell;
-}
-
-- (void)didSelectInTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
-    if (self.itemDidSelectBlock){
-        self.itemDidSelectBlock(tableView, indexPath);
-    }
+    return [tableView dequeueReusableCellWithIdentifier:[[self class] cellReuseIdentifier]];
 }
 
 + (void)registerCellForTableView:(UITableView *)tableView {

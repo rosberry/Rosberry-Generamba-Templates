@@ -8,18 +8,12 @@
 
 @interface {{ prefix }}{{ module_info.name }}DataDisplayManager ()
 
-@property (nonatomic) RSBTableViewManager *tableViewManager;
-
 @end
 
 @implementation {{ prefix }}{{ module_info.name }}DataDisplayManager
 
-- (void)displaySectionItems:(NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItems inTableView:(UITableView *)tableView {
-    if (!self.tableViewManager) {
-        self.tableViewManager = [[RSBTableViewManager alloc] initWithTableView:tableView];
-    }
-    [self setupEventsHandlingForSectionItems:sectionItems];
-    [self.tableViewManager setSectionItems:sectionItems];
+- (void)setupInitialState {
+    
 }
 
 - (void)setupEventsHandlingForSectionItems:(NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItems {

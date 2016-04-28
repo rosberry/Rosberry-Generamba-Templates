@@ -12,7 +12,7 @@
 #pragma mark - {{ prefix }}{{ module_info.name }}ModuleInput methods
 
 - (void)configureModule {
-    // Initial module configuration. Independed from view state.
+    [self.view setupInitialState];
 }
 
 - (NSArray *)sectionItemsForObjects:(NSArray *)objects {
@@ -22,10 +22,6 @@
 }
 
 #pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods
-
-- (void)didTriggerViewReadyEvent {
-	[self.view setupInitialState];
-}
 
 #pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods
 

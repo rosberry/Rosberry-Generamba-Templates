@@ -1,15 +1,11 @@
 {% include 'header' %}
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "{{ prefix }}{{ module_info.name }}ViewInput.h"
 @protocol {{ prefix }}{{ module_info.name }}ViewOutput;
-@protocol RSBTableViewSectionItemProtocol;
 
-@interface {{ prefix }}{{ module_info.name }}DataDisplayManager : NSObject
+@interface {{ prefix }}{{ module_info.name }}DataDisplayManager : NSObject <{{ prefix }}{{ module_info.name }}ViewInput>
 
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
-
-- (void)setupEventsHandlingForSectionItems:(NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItems;
-- (void)displaySectionItems:(NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItems inTableView:(UITableView *)tableView;
+@property (nonatomic, weak) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
 
 @end

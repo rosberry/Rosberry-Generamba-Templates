@@ -6,22 +6,17 @@
 #import "{{ prefix }}{{ module_info.name }}Interactor.h"
 #import "{{ prefix }}{{ module_info.name }}Presenter.h"
 #import "{{ prefix }}{{ module_info.name }}Router.h"
-#import <ViperMcFlurry/ViperMcFlurry.h>
 
 #import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
 #import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
 
 @implementation {{ prefix }}{{ module_info.name }}Assembly
 
-- ({{ prefix }}{{ module_info.name }}ViewController *)view{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}ViewController class]
+- ({{ prefix }}{{ module_info.name }}DataDisplayManager *)view{{ module_info.name }}Module {
+    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}DataDisplayManager class]
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self presenter{{ module_info.name }}Module]];
-                              [definition injectProperty:@selector(moduleInput)
-                                                    with:[self presenter{{ module_info.name }}Module]];
-                              [definition injectProperty:@selector(dataDisplayManager)
-                                                    with:[self dataDisplayManager{{ module_info.name }}Module]];
                           }];
 }
 
@@ -52,14 +47,6 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(transitionHandler)
                                                     with:[self view{{ module_info.name }}Module]];
-                          }];
-}
-
-- ({{ prefix }}{{ module_info.name }}DataDisplayManager *)dataDisplayManager{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}DataDisplayManager class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(output)
-                                                    with:[self presenter{{ module_info.name }}Module]];
                           }];
 }
 

@@ -36,11 +36,6 @@ code_files:
 - {name: Interactor/Interactor.h, path: Code/Interactor/interactor.h.liquid}
 - {name: Interactor/Interactor.m, path: Code/Interactor/interactor.m.liquid}
 
-# Router layer
-- {name: Router/RouterInput.h, path: Code/Router/router_input.h.liquid}
-- {name: Router/Router.h, path: Code/Router/router.h.liquid}
-- {name: Router/Router.m, path: Code/Router/router.m.liquid}
-
 # The declarations for test files
 test_files:
 # Assembly tests

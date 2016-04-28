@@ -5,14 +5,12 @@
 #import "{{ prefix }}{{ module_info.name }}ModuleInput.h"
 @protocol {{ prefix }}{{ module_info.name }}ViewInput;
 @protocol {{ prefix }}{{ module_info.name }}InteractorInput;
-@protocol {{ prefix }}{{ module_info.name }}RouterInput;
 @class {{ prefix }}{{ module_info.name }}SectionItemsFactory;
 
 @interface {{ prefix }}{{ module_info.name }}Presenter : NSObject <{{ prefix }}{{ module_info.name }}ModuleInput, {{ prefix }}{{ module_info.name }}ViewOutput, {{ prefix }}{{ module_info.name }}InteractorOutput>
 
 @property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}ViewInput> view;
 @property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}InteractorInput> interactor;
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}RouterInput> router;
 
 @property (nonatomic, strong) {{ prefix }}{{ module_info.name }}SectionItemsFactory *sectionItemsFactory;
 

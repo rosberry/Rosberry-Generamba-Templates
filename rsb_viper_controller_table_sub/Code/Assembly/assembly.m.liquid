@@ -5,7 +5,6 @@
 #import "{{ prefix }}{{ module_info.name }}DataDisplayManager.h"
 #import "{{ prefix }}{{ module_info.name }}Interactor.h"
 #import "{{ prefix }}{{ module_info.name }}Presenter.h"
-#import "{{ prefix }}{{ module_info.name }}Router.h"
 
 #import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
 #import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
@@ -35,18 +34,8 @@
                                                     with:[self view{{ module_info.name }}Module]];
                               [definition injectProperty:@selector(interactor)
                                                     with:[self interactor{{ module_info.name }}Module]];
-                              [definition injectProperty:@selector(router)
-                                                    with:[self router{{ module_info.name }}Module]];
                               [definition injectProperty:@selector(sectionItemsFactory)
                                                     with:[self sectionItemsFactory{{ module_info.name }}Module]];
-                          }];
-}
-
-- ({{ prefix }}{{ module_info.name }}Router *)router{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}Router class]
-                          configuration:^(TyphoonDefinition *definition) {
-                              [definition injectProperty:@selector(transitionHandler)
-                                                    with:[self view{{ module_info.name }}Module]];
                           }];
 }
 

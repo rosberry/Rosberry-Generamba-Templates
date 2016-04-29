@@ -14,8 +14,6 @@ code_files:
 # View layer
 - {name: View/ViewInput.h, path: Code/View/view_input.h.liquid}
 - {name: View/ViewOutput.h, path: Code/View/view_output.h.liquid}
-- {name: View/ViewController.h, path: Code/View/viewcontroller.h.liquid}
-- {name: View/ViewController.m, path: Code/View/viewcontroller.m.liquid}
 - {name: View/DataDisplayManager/DataDisplayManager.h, path: Code/View/datadisplaymanager/datadisplaymanager.h.liquid}
 - {name: View/DataDisplayManager/DataDisplayManager.m, path: Code/View/datadisplaymanager/datadisplaymanager.m.liquid}
 - {name: View/Cell Items/BaseTableViewCellItem.h, path: Code/View/cellitems/basecellitem.h.liquid}
@@ -42,17 +40,11 @@ test_files:
 - {name: Assembly/AssemblyTests.m, path: Tests/Assembly/assembly_tests.m.liquid}
 - {name: Assembly/Assembly_Testable.h, path: Tests/Assembly/assembly_testable.h.liquid}
 
-# View tests
-- {name: View/ViewControllerTests.m, path: Tests/View/view_tests.m.liquid}
-
 # Presenter tests
 - {name: Presenter/PresenterTests.m, path: Tests/Presenter/presenter_tests.m.liquid}
 
 # Interactor tests
 - {name: Interactor/InteractorTests.m, path: Tests/Interactor/interactor_tests.m.liquid}
-
-# Router tests
-- {name: Router/RouterTests.m, path: Tests/Router/router_tests.m.liquid}
 
 # Template dependencies
 dependencies:

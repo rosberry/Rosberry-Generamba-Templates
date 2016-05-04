@@ -8,6 +8,9 @@
 
 #import "{{ prefix }}{{ module_info.name }}Presenter.h"
 #import "{{ prefix }}{{ module_info.name }}Interactor.h"
+#import "{{ prefix }}{{ module_info.name }}DataDisplayManager.h"
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
 
 @interface {{ prefix }}{{ module_info.name }}AssemblyTests : RamblerTyphoonAssemblyTests
 
@@ -39,7 +42,8 @@
     Class targetClass = [{{ prefix }}{{ module_info.name }}Presenter class];
     NSArray *dependencies = @[
                               RamblerSelector(interactor),
-                              RamblerSelector(view)
+                              RamblerSelector(view),
+                              RamblerSelector(sectionItemsFactory)
                               ];
     // when
     id result = [self.assembly presenter{{ module_info.name }}Module];
@@ -65,4 +69,45 @@
                     dependencies:dependencies];
 }
 
+- (void)testThatAssemblyCreatesView {
+    // given
+    Class targetClass = [{{ prefix }}{{ module_info.name }}DataDisplayManager class];
+    NSArray *dependencies = @[
+                              RamblerSelector(output)
+                              ];
+    // when
+    id result = [self.assembly view{{ prefix }}{{ module_info.name }}Module];
+    
+    // then
+    [self verifyTargetDependency:result
+                       withClass:targetClass
+                    dependencies:dependencies];
+}
+
+- (void)testThatAssemblyCreatesSectionItemsFactory {
+    // given
+    Class targetClass = [{{ prefix }}{{ module_info.name }}SectionItemsFactory class];
+    NSArray *dependencies = @[
+                              RamblerSelector(cellItemsFactory)
+                              ];
+    // when
+    id result = [self.assembly sectionItemsFactory{{ prefix }}{{ module_info.name }}Module];
+    
+    // then
+    [self verifyTargetDependency:result
+                       withClass:targetClass
+                    dependencies:dependencies];
+}
+
+- (void)testThatAssemblyCreatesCellItemsFactory {
+    // given
+    Class targetClass = [{{ prefix }}{{ module_info.name }}CellItemsFactory class];
+    
+    // when
+    id result = [self.assembly cellItemsFactory{{ prefix }}{{ module_info.name }}Module];
+    
+    // then
+    [self verifyTargetDependency:result
+                       withClass:targetClass];
+}
 @end

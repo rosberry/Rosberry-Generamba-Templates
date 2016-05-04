@@ -14,13 +14,18 @@
     [self.view setupInitialState];
 }
 
-- (NSArray *)sectionItemsForObjects:(NSArray *)objects {
-    NSArray *sectionItems = [self.sectionItemsFactory sectionItemsForObjects:objects];
-    [self.view setupEventsHandlingForSectionItems:sectionItems];
-    return sectionItems;
+- (id<RSBTableViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects {
+    id<RSBTableViewSectionItemProtocol> sectionItem = [self.sectionItemsFactory sectionItemWithCellItemsFromObjects:objects];
+    [self.view setupEventsHandlingForSectionItems:@[sectionItem]];
+    return sectionItem;
 }
 
 #pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods
+
+- (void)viewDidSelectCellWithObject:(id)object {
+#warning CONNECT MODULEOUTPUT IN ASSEMBLY THEN DELETE THIS WARNING
+    [self.moduleOutput module:self didSelectCellWithObject:object];
+}
 
 #pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods
 

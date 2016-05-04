@@ -9,6 +9,7 @@
     NSMutableArray *cellItems = [NSMutableArray array];
     for (id object in objects) {
         {{ prefix }}{{ module_info.name }}BaseTableViewCellItem *cellItem = [[{{ prefix }}{{ module_info.name }}BaseTableViewCellItem alloc] init];
+        cellItem.object = object;
         [cellItems addObject:cellItem];
     }
     return [NSArray arrayWithArray:cellItems];

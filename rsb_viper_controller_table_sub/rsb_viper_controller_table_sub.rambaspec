@@ -21,6 +21,7 @@ code_files:
 
 # Presenter layer
 - {name: Presenter/ModuleInput.h, path: Code/Presenter/module_input.h.liquid}
+- {name: Presenter/ModuleOutput.h, path: Code/Presenter/module_output.h.liquid}
 - {name: Presenter/Presenter.h, path: Code/Presenter/presenter.h.liquid}
 - {name: Presenter/Presenter.m, path: Code/Presenter/presenter.m.liquid}
 - {name: Presenter/SectionItemsFactory/SectionItemsFactory.h, path: Code/Presenter/section_items_factory/section_items_factory.h.liquid}
@@ -42,9 +43,14 @@ test_files:
 
 # Presenter tests
 - {name: Presenter/PresenterTests.m, path: Tests/Presenter/presenter_tests.m.liquid}
+- {name: Presenter/SectionItemsFactory/SectionItemsFactoryTests.m, path: Tests/Presenter/section_items_factory/section_items_factory_tests.m.liquid}
+- {name: Presenter/SectionItemsFactory/CellItemsFactory/CellItemsFactoryTests.m, path: Tests/Presenter/section_items_factory/cell_items_factory/cell_items_factory_tests.m.liquid}
 
 # Interactor tests
 - {name: Interactor/InteractorTests.m, path: Tests/Interactor/interactor_tests.m.liquid}
+
+# View tests
+- {name: View/ViewTests.m, path: Tests/View/view_tests.m.liquid}
 
 # Template dependencies
 dependencies:

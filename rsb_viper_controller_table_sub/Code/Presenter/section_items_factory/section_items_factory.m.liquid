@@ -6,13 +6,9 @@
 
 @implementation {{ prefix }}{{ module_info.name }}SectionItemsFactory
 
-- (NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItemsForObjects:(NSArray *)objects {
+- (id<RSBTableViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects {
     NSArray *cellItems = [self.cellItemsFactory cellItemsFromObjects:objects];
-    
-    RSBTableViewSectionItem *sectionItem = [[RSBTableViewSectionItem alloc] initWithCellItems:cellItems];
-    NSArray *sectionItems = @[sectionItem];
-    
-    return sectionItems;
+    return [[RSBTableViewSectionItem alloc] initWithCellItems:cellItems];
 }
 
 @end

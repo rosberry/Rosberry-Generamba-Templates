@@ -2,6 +2,7 @@
 
 #import <Foundation/Foundation.h>
 #import <ViperMcFlurry/ViperMcFlurry.h>
+@protocol RSBTableViewSectionItemProtocol;
 
 @protocol {{ prefix }}{{ module_info.name }}ModuleInput <RamblerViperModuleInput>
 
@@ -13,8 +14,8 @@
 - (void)configureModule;
 
 /*!
- * @discussion Method asks presenter to give section items for objects.
+ * @discussion Method asks presenter to give section item with cellItems from objects.
  */
-- (NSArray *)sectionItemsForObjects:(NSArray *)objects;
+- (id<RSBTableViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects;
 
 @end

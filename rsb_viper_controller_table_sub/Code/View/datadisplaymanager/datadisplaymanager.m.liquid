@@ -19,9 +19,10 @@
 - (void)setupEventsHandlingForSectionItems:(NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItems {
     for (RSBTableViewSectionItem *sectionItem in sectionItems) {
         for ({{ prefix }}{{ module_info.name }}BaseTableViewCellItem *cellItem in sectionItem.cellItems) {
+            __weak typeof(cellItem) weakCellitem = cellItem;
             [cellItem setItemDidSelectBlock:^(__weak UITableView *tableView, NSIndexPath *indexPath) {
                 [tableView deselectRowAtIndexPath:indexPath animated:YES];
-                // handle did select here
+                [self.output viewDidSelectCellWithObject:weakCellitem.object];
             }];
         }
     }

@@ -7,6 +7,9 @@
 
 #import "{{ prefix }}{{ module_info.name }}ViewInput.h"
 #import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+
+#import <RSBTableViewSectionItemProtocol.h>
 
 @interface {{ prefix }}{{ module_info.name }}PresenterTests : XCTestCase
 
@@ -28,9 +31,11 @@
 
     self.mockInteractor = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}InteractorInput));
     self.mockView = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}ViewInput));
+    id factory = OCMClassMock([{{ prefix }}{{ module_info.name }}SectionItemsFactory class]);
 
     self.presenter.interactor = self.mockInteractor;
     self.presenter.view = self.mockView;
+    self.presenter.sectionItemsFactory = factory;
 }
 
 - (void)tearDown {
@@ -43,6 +48,19 @@
 }
 
 #pragma mark - Тестирование методов {{ prefix }}{{ module_info.name }}ModuleInput
+
+- (void)testThatModuleCorrectlyCreateSectionItemWithCellItemsFromObjects {
+    //given
+    NSArray *objects = @[[NSObject new]];
+    id<RSBTableViewSectionItemProtocol> mockSectionItem = OCMProtocolMock(@protocol(RSBTableViewSectionItemProtocol));
+    OCMStub([self.presenter.sectionItemsFactory sectionItemWithCellItemsFromObjects:objects]).andReturn(mockSectionItem);
+    
+    //when
+    id<RSBTableViewSectionItemProtocol> sectionItem = [self.presenter sectionItemWithCellItemsFromObjects:objects];
+    
+    //then
+    OCMVerify([self.mockView setupEventsHandlingForSectionItems:@[sectionItem]]);
+}
 
 #pragma mark - Тестирование методов {{ prefix }}{{ module_info.name }}ViewOutput
 

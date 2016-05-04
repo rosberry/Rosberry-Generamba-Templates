@@ -8,6 +8,6 @@
 
 @property (nonatomic) {{ prefix }}{{ module_info.name }}CellItemsFactory *cellItemsFactory;
 
-- (NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItemsForObjects:(NSArray *)objects;
+- (id<RSBTableViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects;
 
 @end

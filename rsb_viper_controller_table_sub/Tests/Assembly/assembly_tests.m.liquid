@@ -76,7 +76,7 @@
                               RamblerSelector(output)
                               ];
     // when
-    id result = [self.assembly view{{ prefix }}{{ module_info.name }}Module];
+    id result = [self.assembly view{{ module_info.name }}Module];
     
     // then
     [self verifyTargetDependency:result
@@ -91,7 +91,7 @@
                               RamblerSelector(cellItemsFactory)
                               ];
     // when
-    id result = [self.assembly sectionItemsFactory{{ prefix }}{{ module_info.name }}Module];
+    id result = [self.assembly sectionItemsFactory{{ module_info.name }}Module];
     
     // then
     [self verifyTargetDependency:result
@@ -104,7 +104,7 @@
     Class targetClass = [{{ prefix }}{{ module_info.name }}CellItemsFactory class];
     
     // when
-    id result = [self.assembly cellItemsFactory{{ prefix }}{{ module_info.name }}Module];
+    id result = [self.assembly cellItemsFactory{{ module_info.name }}Module];
     
     // then
     [self verifyTargetDependency:result

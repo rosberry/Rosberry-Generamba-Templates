@@ -3,7 +3,7 @@
 #import <Foundation/Foundation.h>
 @protocol {{ prefix }}{{ module_info.name }}ModuleInput;
 
-@protocol TIFeedNewsBigModuleOutput <NSObject>
+@protocol {{ prefix }}{{ module_info.name }}ModuleOutput <NSObject>
 
 - (void)module{{ module_info.name }}:(id<{{ prefix }}{{ module_info.name }}ModuleInput>)moduleInput didSelectCellWithObject:(id)object;
 

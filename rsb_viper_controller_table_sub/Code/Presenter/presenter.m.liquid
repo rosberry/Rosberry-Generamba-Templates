@@ -24,7 +24,7 @@
 
 - (void)viewDidSelectCellWithObject:(id)object {
 #warning CONNECT MODULEOUTPUT IN ASSEMBLY THEN DELETE THIS WARNING
-    [self.moduleOutput module:self didSelectCellWithObject:object];
+    [self.moduleOutput module{{ module_info.name }}:self didSelectCellWithObject:object];
 }
 
 #pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods

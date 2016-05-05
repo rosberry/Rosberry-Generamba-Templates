@@ -1,0 +1,30 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}BaseCollectionViewCellItem.h"
+
+@implementation {{ prefix }}{{ module_info.name }}BaseCollectionViewCellItem
+
+- (CGSize)sizeForCollectionView:(UICollectionView *)collectionView
+                         layout:(UICollectionViewLayout*)collectionViewLayout
+                      indexPath:(NSIndexPath *)indexPath {
+    return (CGSize) {};
+}
+
+- (UICollectionViewCell *)cellForCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath {
+    return [collectionView dequeueReusableCellWithReuseIdentifier:[[self class] cellReuseIdentifier] forIndexPath:indexPath];
+}
+
+- (void)configureCell:(UICollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    [super configureCell:cell atIndexPath:indexPath];
+}
+
+
++ (void)registerCellForCollectionView:(UICollectionView *)collectionView {
+    [collectionView registerNib:[UINib nibWithNibName:[self cellReuseIdentifier] bundle:nil] forCellWithReuseIdentifier:[self cellReuseIdentifier]];
+}
+
++ (NSString *)cellReuseIdentifier {
+    return NSStringFromClass([UICollectionViewCell class]);
+}
+
+@end

@@ -1,0 +1,21 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+#import <ViperMcFlurry/ViperMcFlurry.h>
+@protocol RSBCollectionViewSectionItemProtocol;
+
+@protocol {{ prefix }}{{ module_info.name }}ModuleInput <RamblerViperModuleInput>
+
+/**
+ * @author {{ developer.name }}
+ * 
+ * Method for initial module configuration.
+ */
+- (void)configureModule;
+
+/*!
+ * @discussion Method asks presenter to give section item with cellItems from objects.
+ */
+- (id<RSBCollectionViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects;
+
+@end

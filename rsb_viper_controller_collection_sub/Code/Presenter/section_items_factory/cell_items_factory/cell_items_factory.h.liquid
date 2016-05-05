@@ -1,0 +1,9 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+
+@interface {{ prefix }}{{ module_info.name }}CellItemsFactory : NSObject
+
+- (NSArray *)cellItemsFromObjects:(NSArray *)objects;
+
+@end

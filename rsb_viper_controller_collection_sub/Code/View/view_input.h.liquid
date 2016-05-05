@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@protocol RSBCollectionViewSectionItemProtocol;
+
+@protocol {{ prefix }}{{ module_info.name }}ViewInput <NSObject>
+
+/**
+ * @author {{ developer.name }}
+ *
+ * Setup initial view state/
+ */
+- (void)setupInitialState;
+/*!
+ * @discussion setup only events handling for sectionitems without showing it.
+ */
+- (void)setupEventsHandlingForSectionItems:(NSArray<id<RSBCollectionViewSectionItemProtocol>> *)sectionItems;
+
+@end

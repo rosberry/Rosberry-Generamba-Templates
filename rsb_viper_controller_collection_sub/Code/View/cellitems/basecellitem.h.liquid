@@ -1,0 +1,9 @@
+{% include 'header' %}
+
+#import <RSBCollectionViewManager/RSBCollectionViewCellItem.h>
+
+@interface {{ prefix }}{{ module_info.name }}BaseCollectionViewCellItem : RSBCollectionViewCellItem
+
+@property (nonatomic) id object;
+
+@end

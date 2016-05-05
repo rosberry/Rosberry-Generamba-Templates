@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}Assembly.h"
+
+@class {{ prefix }}{{ module_info.name }}DataDisplayManager;
+@class {{ prefix }}{{ module_info.name }}Interactor;
+@class {{ prefix }}{{ module_info.name }}Presenter;
+@class {{ prefix }}{{ module_info.name }}SectionItemsFactory;
+@class {{ prefix }}{{ module_info.name }}CellItemsFactory;
+
+@interface {{ prefix }}{{ module_info.name }}Assembly ()
+
+- ({{ prefix }}{{ module_info.name }}DataDisplayManager *)view{{ module_info.name }}Module;
+- ({{ prefix }}{{ module_info.name }}Presenter *)presenter{{ module_info.name }}Module;
+- ({{ prefix }}{{ module_info.name }}Interactor *)interactor{{ module_info.name }}Module;
+- ({{ prefix }}{{ module_info.name }}SectionItemsFactory *)sectionItemsFactory{{ module_info.name }}Module;
+- ({{ prefix }}{{ module_info.name }}CellItemsFactory *)cellItemsFactory{{ module_info.name }}Module;
+
+@end

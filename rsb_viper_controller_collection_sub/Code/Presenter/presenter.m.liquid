@@ -1,0 +1,33 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}Presenter.h"
+#import "{{ prefix }}{{ module_info.name }}ViewInput.h"
+#import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
+#import "{{ prefix }}{{ module_info.name }}ModuleOutput.h"
+
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+
+@implementation {{ prefix }}{{ module_info.name }}Presenter
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ModuleInput methods
+
+- (void)configureModule {
+    [self.view setupInitialState];
+}
+
+- (id<RSBCollectionViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects {
+    id<RSBCollectionViewSectionItemProtocol> sectionItem = [self.sectionItemsFactory sectionItemWithCellItemsFromObjects:objects];
+    [self.view setupEventsHandlingForSectionItems:@[sectionItem]];
+    return sectionItem;
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods
+
+- (void)viewDidSelectCellWithObject:(id)object {
+#warning CONNECT MODULEOUTPUT IN ASSEMBLY THEN DELETE THIS WARNING
+    [self.moduleOutput module{{ module_info.name }}:self didSelectCellWithObject:object];
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods
+
+@end

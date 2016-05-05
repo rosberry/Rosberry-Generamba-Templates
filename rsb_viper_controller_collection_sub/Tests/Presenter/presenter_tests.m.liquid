@@ -1,0 +1,69 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
+#import "{{ prefix }}{{ module_info.name }}Presenter.h"
+
+#import "{{ prefix }}{{ module_info.name }}ViewInput.h"
+#import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+
+#import <RSBCollectionViewManager/RSBCollectionViewSectionItemProtocol.h>
+
+@interface {{ prefix }}{{ module_info.name }}PresenterTests : XCTestCase
+
+@property (strong, nonatomic) {{ prefix }}{{ module_info.name }}Presenter *presenter;
+
+@property (strong, nonatomic) id mockInteractor;
+@property (strong, nonatomic) id mockView;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}PresenterTests
+
+#pragma mark - Настройка окружения для тестирования
+
+- (void)setUp {
+    [super setUp];
+
+    self.presenter = [[{{ prefix }}{{ module_info.name }}Presenter alloc] init];
+
+    self.mockInteractor = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}InteractorInput));
+    self.mockView = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}ViewInput));
+    id factory = OCMClassMock([{{ prefix }}{{ module_info.name }}SectionItemsFactory class]);
+
+    self.presenter.interactor = self.mockInteractor;
+    self.presenter.view = self.mockView;
+    self.presenter.sectionItemsFactory = factory;
+}
+
+- (void)tearDown {
+    self.presenter = nil;
+
+    self.mockView = nil;
+    self.mockInteractor = nil;
+
+    [super tearDown];
+}
+
+#pragma mark - Тестирование методов {{ prefix }}{{ module_info.name }}ModuleInput
+
+- (void)testThatModuleCorrectlyCreateSectionItemWithCellItemsFromObjects {
+    //given
+    NSArray *objects = @[[NSObject new]];
+    id<RSBCollectionViewSectionItemProtocol> mockSectionItem = OCMProtocolMock(@protocol(RSBCollectionViewSectionItemProtocol));
+    OCMStub([self.presenter.sectionItemsFactory sectionItemWithCellItemsFromObjects:objects]).andReturn(mockSectionItem);
+    
+    //when
+    id<RSBCollectionViewSectionItemProtocol> sectionItem = [self.presenter sectionItemWithCellItemsFromObjects:objects];
+    
+    //then
+    OCMVerify([self.mockView setupEventsHandlingForSectionItems:@[sectionItem]]);
+}
+
+#pragma mark - Тестирование методов {{ prefix }}{{ module_info.name }}ViewOutput
+
+#pragma mark - Тестирование методов {{ prefix }}{{ module_info.name }}InteractorOutput
+
+@end

@@ -44,7 +44,7 @@
     id<RSBTableViewSectionItemProtocol> sectionItem = [self.sectionItemsFactory sectionItemWithCellItemsFromObjects:objects];
     
     //then
-    XCTAssertEqual(sectionItem.cellItems.count, objects.count);
+    XCTAssert([sectionItem conformsToProtocol:@protocol(RSBTableViewSectionItemProtocol)]);
 }
 
 @end

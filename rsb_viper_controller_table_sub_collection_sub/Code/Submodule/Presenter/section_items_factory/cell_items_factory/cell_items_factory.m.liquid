@@ -1,0 +1,18 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}SubmoduleCellItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem.h"
+
+@implementation {{ prefix }}{{ module_info.name }}SubmoduleCellItemsFactory
+
+- (NSArray *)cellItemsFromObjects:(NSArray *)objects {
+    NSMutableArray *cellItems = [NSMutableArray array];
+    for (id object in objects) {
+        {{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem *cellItem = [[{{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem alloc] init];
+        cellItem.object = object;
+        [cellItems addObject:cellItem];
+    }
+    return [NSArray arrayWithArray:cellItems];
+}
+
+@end

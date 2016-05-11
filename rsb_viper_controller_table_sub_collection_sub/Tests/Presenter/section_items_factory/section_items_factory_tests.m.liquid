@@ -1,0 +1,56 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
+#import <RSBTableViewSectionItemProtocol.h>
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
+
+#import <RSBCollectionViewSectionItemProtocol.h>
+
+#import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItemAssembly.h"
+
+@interface {{ prefix }}{{ module_info.name }}SectionItemsFactoryTests : XCTestCase
+
+@property (nonatomic) {{ prefix }}{{ module_info.name }}SectionItemsFactory *sectionItemsFactory;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}CellItemsFactory *cellItemsFactory;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}SectionItemsFactoryTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.sectionItemsFactory = [[{{ prefix }}{{ module_info.name }}SectionItemsFactory alloc] init];
+    self.cellItemsFactory = [[{{ prefix }}{{ module_info.name }}CellItemsFactory alloc] init];
+    self.cellItemsFactory.assemblyTableViewCellItem{{ module_info.name }}Module = [{{ prefix }}{{ module_info.name }}BaseTableViewCellItemAssembly assembly];
+    [self.cellItemsFactory.assemblyTableViewCellItem{{ module_info.name }}Module activate];
+    
+    self.sectionItemsFactory.cellItemsFactory = self.cellItemsFactory;
+}
+
+- (void)tearDown {
+    self.sectionItemsFactory = nil;
+    self.cellItemsFactory = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatFactoryCorrectlyCreatesSectionItems {
+    //given
+    NSMutableArray *sectionItems = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < 3; ++i) {
+        [sectionItems addObject:OCMProtocolMock(@protocol(RSBCollectionViewSectionItemProtocol))];
+    }
+    
+    //when
+    id<RSBTableViewSectionItemProtocol> sectionItem = [self.sectionItemsFactory sectionItemWithCollectionViewSectionItems:sectionItems];
+    
+    //then
+    XCTAssert([sectionItem conformsToProtocol:@protocol(RSBTableViewSectionItemProtocol)]);
+}
+
+@end

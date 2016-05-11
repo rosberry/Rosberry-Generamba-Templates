@@ -1,0 +1,34 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItemDataDisplayManager.h"
+#import "{{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem.h"
+
+#import <RSBCollectionViewManager.h>
+#import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItem.h"
+
+@interface {{ prefix }}{{ module_info.name }}BaseTableViewCellItemDataDisplayManager () <UIScrollViewDelegate>
+
+@property (nonatomic) RSBCollectionViewManager *collectionViewManager;
+@property (nonatomic, weak) id<RSBTableViewCellItemProtocol> parentCellItem;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}BaseTableViewCellItemDataDisplayManager
+
+- (void)displaySectionItems:(NSArray<id<RSBCollectionViewSectionItemProtocol>> *)sectionItems inCollectionView:(UICollectionView *)collectionView managedByCellItem:(id<RSBTableViewCellItemProtocol>)cellItem {
+    if (!self.collectionViewManager) {
+        self.collectionViewManager = [[RSBCollectionViewManager alloc] initWithCollectionView:collectionView];
+        self.collectionViewManager.scrollDelegate = self;
+    }
+    
+    self.parentCellItem = cellItem;
+    
+    [self.collectionViewManager setSectionItems:sectionItems];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    {{ prefix }}{{ module_info.name }}BaseTableViewCellItem *cellItem = self.parentCellItem;
+    [cellItem setCollectionOffset:scrollView.contentOffset];
+}
+
+@end

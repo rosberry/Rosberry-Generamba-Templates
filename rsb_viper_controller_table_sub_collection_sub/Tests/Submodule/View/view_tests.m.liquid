@@ -1,0 +1,52 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
+#import "{{ prefix }}{{ module_info.name }}SubmoduleDataDisplayManager.h"
+#import "{{ prefix }}{{ module_info.name }}SubmoduleViewOutput.h"
+
+#import <RSBCollectionViewSectionItemProtocol.h>
+#import "{{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem.h"
+
+@interface {{ prefix }}{{ module_info.name }}SubmoduleViewTests : XCTestCase
+
+@property (nonatomic) {{ prefix }}{{ module_info.name }}SubmoduleDataDisplayManager *dataDisplayManager;
+@property (nonatomic) id mockOutput;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}SubmoduleViewTests
+
+- (void)setUp {
+    [super setUp];
+    
+    self.dataDisplayManager = [[{{ prefix }}{{ module_info.name }}SubmoduleDataDisplayManager alloc] init];
+    self.mockOutput = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}SubmoduleViewOutput));
+    self.dataDisplayManager.output = self.mockOutput;
+}
+
+- (void)tearDown {
+    self.dataDisplayManager = nil;
+    self.mockOutput = nil;
+    
+    [super tearDown];
+}
+
+- (void)testThatDataDisplayManagerCorrectlySetupEventsHandling {
+    //given
+    id<RSBCollectionViewSectionItemProtocol> sectionItem = OCMProtocolMock(@protocol(RSBCollectionViewSectionItemProtocol));
+    {{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem *cellItem = [[{{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem alloc] init];
+    cellItem.object = [[NSObject alloc] init];
+    OCMStub([sectionItem cellItems]).andReturn(@[cellItem]);
+    
+    [self.dataDisplayManager setupEventsHandlingForSectionItems:@[sectionItem]];
+    
+    //when
+    [cellItem itemDidSelectInCollectionView:nil atIndexPath:nil];
+    
+    //then
+    OCMVerify([self.mockOutput viewDidSelectCellWithObject:[OCMArg isEqual:cellItem.object]]);
+}
+
+@end

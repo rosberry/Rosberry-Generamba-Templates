@@ -1,0 +1,14 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}SubmoduleSectionItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}SubmoduleCellItemsFactory.h"
+#import <RSBCollectionViewManager/RSBCollectionViewSectionItem.h>
+
+@implementation {{ prefix }}{{ module_info.name }}SubmoduleSectionItemsFactory
+
+- (id<RSBCollectionViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects {
+    NSArray *cellItems = [self.cellItemsFactory cellItemsFromObjects:objects];
+    return [[RSBCollectionViewSectionItem alloc] initWithCellItems:cellItems];
+}
+
+@end

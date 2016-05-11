@@ -1,0 +1,13 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@protocol RSBCollectionViewSectionItemProtocol;
+@class {{ prefix }}{{ module_info.name }}BaseTableViewCellItemAssembly;
+
+@interface {{ prefix }}{{ module_info.name }}CellItemsFactory : NSObject
+
+@property (nonatomic) {{ prefix }}{{ module_info.name }}BaseTableViewCellItemAssembly *assemblyTableViewCellItem{{ module_info.name }}Module;
+
+- (NSArray *)cellItemsWithCollectionViewSectionItems:(NSArray<id<RSBCollectionViewSectionItemProtocol>> *)sectionItems;
+
+@end

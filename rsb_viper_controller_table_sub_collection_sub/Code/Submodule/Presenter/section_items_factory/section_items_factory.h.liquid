@@ -1,0 +1,13 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@class {{ prefix }}{{ module_info.name }}SubmoduleCellItemsFactory;
+@protocol RSBCollectionViewSectionItemProtocol;
+
+@interface {{ prefix }}{{ module_info.name }}SubmoduleSectionItemsFactory : NSObject
+
+@property (nonatomic) {{ prefix }}{{ module_info.name }}SubmoduleCellItemsFactory *cellItemsFactory;
+
+- (id<RSBCollectionViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects;
+
+@end

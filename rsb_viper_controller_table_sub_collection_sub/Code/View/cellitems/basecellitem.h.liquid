@@ -1,0 +1,15 @@
+{% include 'header' %}
+
+#import <RSBTableViewManager/RSBTableViewCellItem.h>
+@class {{ prefix }}{{ module_info.name }}BaseTableViewCellItemDataDisplayManager;
+@protocol RSBCollectionViewSectionItemProtocol;
+
+@interface {{ prefix }}{{ module_info.name }}BaseTableViewCellItem : RSBTableViewCellItem
+
+@property (nonatomic) id object;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}BaseTableViewCellItemDataDisplayManager *dataDisplayManager;
+@property (nonatomic) id<RSBCollectionViewSectionItemProtocol> sectionItem;
+
+@property (nonatomic) CGPoint collectionOffset;
+
+@end

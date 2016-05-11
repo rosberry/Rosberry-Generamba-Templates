@@ -1,0 +1,45 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}Presenter.h"
+#import "{{ prefix }}{{ module_info.name }}ViewInput.h"
+#import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
+#import "{{ prefix }}{{ module_info.name }}ModuleOutput.h"
+
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+
+#import "{{ prefix }}{{ module_info.name }}SubmoduleInput.h"
+
+@implementation {{ prefix }}{{ module_info.name }}Presenter
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ModuleInput methods
+
+- (void)configureModule {
+    [self.view setupInitialState];
+}
+
+- (id<RSBTableViewSectionItemProtocol>)sectionItemWithCellItemsFromObjects:(NSArray *)objects {
+    id<RSBCollectionViewSectionItemProtocol> collectionSectionItem = [self.submoduleInput sectionItemWithCellItemsFromObjects:objects];
+    id<RSBTableViewSectionItemProtocol> sectionItem = [self.sectionItemsFactory sectionItemWithCollectionViewSectionItems:@[collectionSectionItem]];
+    [self.view setupEventsHandlingForSectionItems:@[sectionItem]];
+    return sectionItem;
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods
+
+- (void)viewDidSelectCellWithObject:(id)object {
+#warning CONNECT MODULEOUTPUT IN ASSEMBLY THEN DELETE THIS WARNING
+    if ([self.moduleOutput respondsToSelector:@selector(module{{ module_info.name }}:didSelectCellWithObject:)]) {
+        [self.moduleOutput module{{ module_info.name }}:self didSelectCellWithObject:object];
+    }
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods
+
+#pragma mark - {{ prefix }}{{ module_info.name }}SubmoduleOutput
+
+- (void)submodule{{ module_info.name }}:(id<{{ prefix }}{{ module_info.name }}SubmoduleInput>)moduleInput didSelectCellWithObject:(id)object {
+#warning CONNECT MODULEOUTPUT IN ASSEMBLY THEN DELETE THIS WARNING
+    [self.moduleOutput module{{ module_info.name }}:self didSelectCollectionViewCellWithObject:object];
+}
+
+@end

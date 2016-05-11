@@ -1,0 +1,11 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+#import "{{ prefix }}{{ module_info.name }}ViewInput.h"
+@protocol {{ prefix }}{{ module_info.name }}ViewOutput;
+
+@interface {{ prefix }}{{ module_info.name }}DataDisplayManager : NSObject <{{ prefix }}{{ module_info.name }}ViewInput>
+
+@property (nonatomic, weak) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
+
+@end

@@ -1,0 +1,13 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@protocol {{ prefix }}{{ module_info.name }}ModuleInput;
+
+@protocol {{ prefix }}{{ module_info.name }}ModuleOutput <NSObject>
+
+- (void)module{{ module_info.name }}:(id<{{ prefix }}{{ module_info.name }}ModuleInput>)moduleInput didSelectCollectionViewCellWithObject:(id)object;
+
+@optional
+- (void)module{{ module_info.name }}:(id<{{ prefix }}{{ module_info.name }}ModuleInput>)moduleInput didSelectCellWithObject:(id)object;
+
+@end

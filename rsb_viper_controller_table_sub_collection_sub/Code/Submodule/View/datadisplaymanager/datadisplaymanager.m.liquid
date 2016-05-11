@@ -1,0 +1,31 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}SubmoduleDataDisplayManager.h"
+#import "{{ prefix }}{{ module_info.name }}SubmoduleViewOutput.h"
+
+#import <RSBCollectionViewManager/RSBCollectionViewManager.h>
+#import "{{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem.h"
+
+@interface {{ prefix }}{{ module_info.name }}SubmoduleDataDisplayManager ()
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}SubmoduleDataDisplayManager
+
+- (void)setupInitialState {
+    
+}
+
+- (void)setupEventsHandlingForSectionItems:(NSArray<id<RSBCollectionViewSectionItemProtocol>> *)sectionItems {
+    for (RSBCollectionViewSectionItem *sectionItem in sectionItems) {
+        for ({{ prefix }}{{ module_info.name }}SubmoduleBaseCollectionViewCellItem *cellItem in sectionItem.cellItems) {
+            __weak typeof(cellItem) weakCellitem = cellItem;
+            [cellItem setItemDidSelectBlock:^(__weak UICollectionView *collectionView, NSIndexPath *indexPath) {
+                [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+                [self.output viewDidSelectCellWithObject:weakCellitem.object];
+            }];
+        }
+    }
+}
+
+@end

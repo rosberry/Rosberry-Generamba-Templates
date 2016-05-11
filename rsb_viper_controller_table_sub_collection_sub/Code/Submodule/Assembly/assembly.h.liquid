@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+#import <Typhoon/Typhoon.h>
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
+@class {{ prefix }}{{ module_info.name }}SubmodulePresenter;
+@class {{ prefix }}{{ module_info.name }}Assembly;
+
+/**
+ * @author {{ developer.name }}
+ *
+ * {{ module_info.description }}
+ */
+@interface {{ prefix }}{{ module_info.name }}SubmoduleAssembly : TyphoonAssembly <RamblerInitialAssembly>
+
+@property (nonatomic, weak) {{ prefix }}{{ module_info.name }}Assembly *parentAssembly;
+
+- ({{ prefix }}{{ module_info.name }}SubmodulePresenter *)presenter{{ module_info.name }}Submodule;
+
+@end

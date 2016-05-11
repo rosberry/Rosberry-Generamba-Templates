@@ -1,0 +1,10 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@protocol {{ prefix }}{{ module_info.name }}SubmoduleInput;
+
+@protocol {{ prefix }}{{ module_info.name }}SubmoduleOutput <NSObject>
+
+- (void)submodule{{ module_info.name }}:(id<{{ prefix }}{{ module_info.name }}SubmoduleInput>)moduleInput didSelectCellWithObject:(id)object;
+
+@end

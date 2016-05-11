@@ -43,7 +43,8 @@
     NSArray *dependencies = @[
                               RamblerSelector(interactor),
                               RamblerSelector(view),
-                              RamblerSelector(sectionItemsFactory)
+                              RamblerSelector(sectionItemsFactory),
+                              RamblerSelector(moduleOutput)
                               ];
     // when
     id result = [self.assembly presenter{{ module_info.name }}Module];
@@ -110,4 +111,5 @@
     [self verifyTargetDependency:result
                        withClass:targetClass];
 }
+
 @end

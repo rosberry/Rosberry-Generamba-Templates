@@ -5,9 +5,9 @@
 @implementation {{ prefix }}{{ module_info.name }}BaseCollectionViewCellItem
 
 - (CGSize)sizeForCollectionView:(UICollectionView *)collectionView
-                         layout:(UICollectionViewLayout*)collectionViewLayout
+                         layout:(UICollectionViewLayout *)collectionViewLayout
                       indexPath:(NSIndexPath *)indexPath {
-    return (CGSize) {};
+    return CGSizeZero;
 }
 
 - (UICollectionViewCell *)cellForCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath {

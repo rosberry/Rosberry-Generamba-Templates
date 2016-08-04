@@ -1,7 +1,9 @@
 {% include 'header' %}
 
 #import "{{ prefix }}{{ module_info.name }}Service.h"
+{% if custom_parameters.inherit != nil %}#import "{{ custom_parameters.inherit }}.h"
 
-@interface {{ prefix }}{{ module_info.name }}ServiceImplementation : NSObject <{{ prefix }}{{ module_info.name }}Service>
+@interface {{ prefix }}{{ module_info.name }}ServiceImplementation : {{ custom_parameters.inherit }} <{{ prefix }}{{ module_info.name }}Service>{% else %}
+@interface {{ prefix }}{{ module_info.name }}ServiceImplementation : NSObject <{{ prefix }}{{ module_info.name }}Service>{% endif %}
 
 @end

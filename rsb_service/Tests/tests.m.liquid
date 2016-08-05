@@ -1,0 +1,27 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+
+#import "{{ prefix }}{{ module_info.name }}ServiceImplementation.h"
+
+@interface {{ prefix }}{{ module_info.name }}Tests : XCTestCase
+
+@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}ServiceImplementation *service;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}Tests
+
+- (void)setUp {
+    [super setUp];
+
+    self.service = [[{{ prefix }}{{ module_info.name }}ServiceImplementation alloc] init];
+}
+
+- (void)tearDown {
+    self.service = nil;
+
+    [super tearDown];
+}
+
+@end

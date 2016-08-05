@@ -12,3 +12,7 @@ code_files:
 - {name: Service.h, path: Code/service.h.liquid}
 - {name: ServiceImplementation.h, path: Code/service_implementation.h.liquid}
 - {name: ServiceImplementation.m, path: Code/service_implementation.m.liquid}
+
+# The declarations for test files
+test_files:
+- {name: Tests.m, path: Tests/tests.m.liquid}

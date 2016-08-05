@@ -1,0 +1,16 @@
+# Template information section
+name: "rsb_assembly"
+summary: "Create Assembly with tests"
+author: "Anton Kovalev"
+version: "1.0"
+license: "MIT" 
+
+# The declarations for code files
+code_files:
+- {name: Assembly.h, path: Code/assembly.h.liquid}
+- {name: Assembly.m, path: Code/assembly.m.liquid}
+
+# The declarations for test files
+test_files:
+- {name: AssemblyTests.m, path: Tests/assembly_tests.m.liquid}
+- {name: Assembly_Testable.h, path: Tests/assembly_testable.h.liquid}

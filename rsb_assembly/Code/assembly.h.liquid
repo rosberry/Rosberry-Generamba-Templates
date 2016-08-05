@@ -1,0 +1,8 @@
+{% include 'header' %}
+
+#import <Typhoon/Typhoon.h>
+#import <RamblerTyphoonUtils/AssemblyCollector.h>
+
+@interface {{ prefix }}{{ module_info.name }}Assembly : TyphoonAssembly <RamblerInitialAssembly>
+
+@end

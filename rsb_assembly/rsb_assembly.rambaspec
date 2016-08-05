@@ -7,8 +7,8 @@ license: "MIT"
 
 # The declarations for code files
 code_files:
-- {name: Assembly.h, path: Code/assembly.h.liquid}
-- {name: Assembly.m, path: Code/assembly.m.liquid}
+- {name: ../Assembly.h, path: Code/assembly.h.liquid}
+- {name: ../Assembly.m, path: Code/assembly.m.liquid}
 
 # The declarations for test files
 test_files:

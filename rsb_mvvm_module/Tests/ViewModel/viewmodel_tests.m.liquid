@@ -1,0 +1,51 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
+#import "{{ prefix }}{{ module_info.name }}ViewModel.h"
+
+#import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
+#import "{{ prefix }}{{ module_info.name }}RouterInput.h"
+
+@interface {{ prefix }}{{ module_info.name }}ViewModelTests : XCTestCase
+
+@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}ViewModel *viewModel;
+
+@property (nonatomic, strong) id mockInteractor;
+@property (nonatomic, strong) id mockRouter;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}ViewModelTests
+
+#pragma mark - Setup environment
+
+- (void)setUp {
+    [super setUp];
+
+    self.viewModel = [[{{ prefix }}{{ module_info.name }}ViewModel alloc] init];
+
+    self.mockInteractor = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}InteractorInput));
+    self.mockRouter = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}RouterInput));
+
+    self.viewModel.interactor = self.mockInteractor;
+    self.viewModel.router = self.mockRouter;
+}
+
+- (void)tearDown {
+    self.viewModel = nil;
+
+    self.mockRouter = nil;
+    self.mockInteractor = nil;
+
+    [super tearDown];
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ModuleInput methods tests
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods tests
+
+#pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods tests
+
+@end

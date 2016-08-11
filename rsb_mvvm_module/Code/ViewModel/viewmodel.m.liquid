@@ -1,0 +1,23 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}ViewModel.h"
+#import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
+#import "{{ prefix }}{{ module_info.name }}RouterInput.h"
+
+@implementation {{ prefix }}{{ module_info.name }}ViewModel
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ModuleInput methods
+
+- (void)configureModule {
+    // Initial module configuration.
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}ViewOutput methods
+
+- (void)didTriggerViewReadyEvent {
+    
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}InteractorOutput methods
+
+@end

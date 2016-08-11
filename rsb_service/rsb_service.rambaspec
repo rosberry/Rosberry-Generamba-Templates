@@ -15,4 +15,4 @@ code_files:
 
 # The declarations for test files
 test_files:
-- {name: Tests.m, path: Tests/tests.m.liquid}
+- {name: ServiceTests.m, path: Tests/tests.m.liquid}

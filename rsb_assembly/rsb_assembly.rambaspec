@@ -7,6 +7,7 @@ license: "MIT"
 
 # The declarations for code files
 code_files:
+- {name: ../.h, path: Code/protocol.h.liquid}
 - {name: ../Assembly.h, path: Code/assembly.h.liquid}
 - {name: ../Assembly.m, path: Code/assembly.m.liquid}
 

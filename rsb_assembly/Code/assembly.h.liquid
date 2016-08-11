@@ -2,7 +2,12 @@
 
 #import <Typhoon/Typhoon.h>
 #import <RamblerTyphoonUtils/AssemblyCollector.h>
+#import "{{ prefix }}{{ module_info.name }}.h"
 
-@interface {{ prefix }}{{ module_info.name }}Assembly : TyphoonAssembly <RamblerInitialAssembly>
+NS_ASSUME_NONNULL_BEGIN
+
+@interface {{ prefix }}{{ module_info.name }}Assembly : TyphoonAssembly <RamblerInitialAssembly, {{ prefix }}{{ module_info.name }}>
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -57,8 +57,7 @@
     // given
     Class targetClass = [{{ prefix }}{{ module_info.name }}ViewModel class];
     NSArray *protocols = @[
-                           @protocol({{ prefix }}{{ module_info.name }}ModuleInput),
-                           @protocol({{ prefix }}{{ module_info.name }}InteractorOutput)
+                           @protocol({{ prefix }}{{ module_info.name }}ModuleInput)
                            ];
     NSArray *dependencies = @[
                               RamblerSelector(interactor),

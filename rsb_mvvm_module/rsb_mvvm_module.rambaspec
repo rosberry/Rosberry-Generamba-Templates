@@ -23,7 +23,6 @@ code_files:
 
 # Interactor layer
 - {name: Interactor/InteractorInput.h, path: Code/Interactor/interactor_input.h.liquid}
-- {name: Interactor/InteractorOutput.h, path: Code/Interactor/interactor_output.h.liquid}
 - {name: Interactor/Interactor.h, path: Code/Interactor/interactor.h.liquid}
 - {name: Interactor/Interactor.m, path: Code/Interactor/interactor.m.liquid}
 

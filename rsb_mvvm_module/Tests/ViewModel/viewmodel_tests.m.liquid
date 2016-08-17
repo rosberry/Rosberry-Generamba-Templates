@@ -10,10 +10,10 @@
 
 @interface {{ prefix }}{{ module_info.name }}ViewModelTests : XCTestCase
 
-@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}ViewModel *viewModel;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}ViewModel *viewModel;
 
-@property (nonatomic, strong) id mockInteractor;
-@property (nonatomic, strong) id mockRouter;
+@property (nonatomic) id mockInteractor;
+@property (nonatomic) id mockRouter;
 
 @end
 

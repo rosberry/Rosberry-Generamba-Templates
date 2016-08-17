@@ -13,10 +13,10 @@
 
 @interface {{ prefix }}{{ module_info.name }}Presenter : NSObject <{{ prefix }}{{ module_info.name }}ModuleInput, {{ prefix }}{{ module_info.name }}ViewOutput, {{ prefix }}{{ module_info.name }}InteractorOutput, {{ prefix }}{{ module_info.name }}SubmoduleOutput>
 
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}ViewInput> view;
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}InteractorInput> interactor;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}ViewInput> view;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}InteractorInput> interactor;
 
-@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}SectionItemsFactory *sectionItemsFactory;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}SectionItemsFactory *sectionItemsFactory;
 
 @property (nonatomic, weak) id<{{ prefix }}{{ module_info.name }}ModuleOutput> moduleOutput;
 

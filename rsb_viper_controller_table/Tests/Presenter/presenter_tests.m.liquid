@@ -17,11 +17,11 @@
 
 @interface {{ prefix }}{{ module_info.name }}PresenterTests : XCTestCase
 
-@property (strong, nonatomic) {{ prefix }}{{ module_info.name }}Presenter *presenter;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}Presenter *presenter;
 
-@property (strong, nonatomic) id mockInteractor;
-@property (strong, nonatomic) id mockRouter;
-@property (strong, nonatomic) id mockView;
+@property (nonatomic) id mockInteractor;
+@property (nonatomic) id mockRouter;
+@property (nonatomic) id mockView;
 
 @end
 

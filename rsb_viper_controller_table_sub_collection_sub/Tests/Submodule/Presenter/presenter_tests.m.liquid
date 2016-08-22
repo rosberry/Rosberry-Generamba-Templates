@@ -13,10 +13,10 @@
 
 @interface {{ prefix }}{{ module_info.name }}SubmodulePresenterTests : XCTestCase
 
-@property (strong, nonatomic) {{ prefix }}{{ module_info.name }}SubmodulePresenter *presenter;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}SubmodulePresenter *presenter;
 
-@property (strong, nonatomic) id mockInteractor;
-@property (strong, nonatomic) id mockView;
+@property (nonatomic) id mockInteractor;
+@property (nonatomic) id mockView;
 
 @end
 

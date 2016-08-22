@@ -4,13 +4,13 @@
 
 #import "{{ prefix }}{{ module_info.name }}ServiceImplementation.h"
 
-@interface {{ prefix }}{{ module_info.name }}Tests : XCTestCase
+@interface {{ prefix }}{{ module_info.name }}ServiceTests : XCTestCase
 
-@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}ServiceImplementation *service;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}ServiceImplementation *service;
 
 @end
 
-@implementation {{ prefix }}{{ module_info.name }}Tests
+@implementation {{ prefix }}{{ module_info.name }}ServiceTests
 
 - (void)setUp {
     [super setUp];

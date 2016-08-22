@@ -11,11 +11,11 @@
 
 @interface {{ prefix }}{{ module_info.name }}PresenterTests : XCTestCase
 
-@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}Presenter *presenter;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}Presenter *presenter;
 
-@property (nonatomic, strong) id mockInteractor;
-@property (nonatomic, strong) id mockRouter;
-@property (nonatomic, strong) id mockView;
+@property (nonatomic) id mockInteractor;
+@property (nonatomic) id mockRouter;
+@property (nonatomic) id mockView;
 
 @end
 

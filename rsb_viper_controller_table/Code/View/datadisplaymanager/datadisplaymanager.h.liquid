@@ -7,7 +7,7 @@
 
 @interface {{ prefix }}{{ module_info.name }}DataDisplayManager : NSObject
 
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
 
 - (void)setupEventsHandlingForSectionItems:(NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItems;
 - (void)displaySectionItems:(NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItems inTableView:(UITableView *)tableView;

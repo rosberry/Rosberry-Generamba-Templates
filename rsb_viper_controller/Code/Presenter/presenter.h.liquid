@@ -10,7 +10,7 @@
 @interface {{ prefix }}{{ module_info.name }}Presenter : NSObject <{{ prefix }}{{ module_info.name }}ModuleInput, {{ prefix }}{{ module_info.name }}ViewOutput, {{ prefix }}{{ module_info.name }}InteractorOutput>
 
 @property (nonatomic, weak) id<{{ prefix }}{{ module_info.name }}ViewInput> view;
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}InteractorInput> interactor;
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}RouterInput> router;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}InteractorInput> interactor;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}RouterInput> router;
 
 @end

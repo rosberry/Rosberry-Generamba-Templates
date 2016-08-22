@@ -10,10 +10,10 @@
 
 @interface {{ prefix }}{{ module_info.name }}SubmodulePresenter : NSObject <{{ prefix }}{{ module_info.name }}SubmoduleInput, {{ prefix }}{{ module_info.name }}SubmoduleViewOutput, {{ prefix }}{{ module_info.name }}SubmoduleInteractorOutput>
 
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}SubmoduleViewInput> view;
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}SubmoduleInteractorInput> interactor;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}SubmoduleViewInput> view;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}SubmoduleInteractorInput> interactor;
 
-@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}SubmoduleSectionItemsFactory *sectionItemsFactory;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}SubmoduleSectionItemsFactory *sectionItemsFactory;
 
 @property (nonatomic, weak) id<{{ prefix }}{{ module_info.name }}SubmoduleOutput> moduleOutput;
 

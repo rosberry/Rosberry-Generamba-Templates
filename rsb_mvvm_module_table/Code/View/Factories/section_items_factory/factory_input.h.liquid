@@ -1,0 +1,14 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@protocol RSBTableViewSectionItemProtocol;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol {{ prefix }}{{ module_info.name }}SectionItemsFactoryInput <NSObject>
+
+- (NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItemsForObjects:(NSArray *)objects;
+
+@end
+
+NS_ASSUME_NONNULL_END

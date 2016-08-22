@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItem.h"
+
+@implementation {{ prefix }}{{ module_info.name }}BaseTableViewCellItem
+
+- (void)configureCell:(UITableViewCell *)cell {
+	// Configure your cell here
+}
+
+- (CGFloat)heightForTableView:(UITableView *)tableView {
+    return 0;
+}
+
+- (Class)registeredTableViewCellClass {
+    return [UITableViewCell class];
+}
+
+@end

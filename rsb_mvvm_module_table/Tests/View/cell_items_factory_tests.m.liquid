@@ -1,0 +1,73 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+#import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
+#import <RSBTableViewCellItemProtocol.h>
+
+@interface {{ prefix }}{{ module_info.name }}CellItemsFactoryTests : XCTestCase
+
+@property (nonatomic) {{ prefix }}{{ module_info.name }}CellItemsFactory *factory;
+@property (nonatomic) NSArray *objects;
+@property (nonatomic) NSArray<id<RSBTableViewCellItemProtocol>> *cellItems;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}CellItemsFactoryTests
+
+- (void)setUp {
+    [super setUp];
+    self.factory = [[{{ prefix }}{{ module_info.name }}CellItemsFactory alloc] init];
+}
+
+- (void)tearDown {
+    self.factory = nil;
+    [super tearDown];
+}
+
+- (void)runWhenCondition {
+    self.cellItems = [self.factory cellItemsForObjects:self.objects];
+}
+
+#pragma mark - interface methods tests
+
+- (void)testThatFactoryReturnZeroCellItemsForEmptyObjectsArray {
+    // given
+    self.objects = @[];
+    
+    // when
+    [self runWhenCondition];
+    
+    // then
+    XCTAssertEqual(self.cellItems.count, 0);
+}
+
+- (void)testThatFactoryReturnEqualCountOfCellItems {
+    // given
+    self.objects = @[[NSObject new],
+                     [NSObject new],
+                     [NSObject new]];
+    
+    // when
+    [self runWhenCondition];
+    
+    // then
+    XCTAssertEqual(self.cellItems.count, self.objects.count);
+}
+
+- (void)testThatCellItemsConformsToProtocol {
+    // given
+    self.objects = @[[NSObject new],
+                     [NSObject new],
+                     [NSObject new]];
+    
+    // when
+    [self runWhenCondition];
+    
+    // then
+    for (id<RSBTableViewCellItemProtocol> cellItem in self.cellItems) {
+        XCTAssertTrue([cellItem conformsToProtocol:@protocol(RSBTableViewCellItemProtocol)]);
+    }
+}
+
+@end

@@ -1,0 +1,14 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@protocol RSBTableViewCellItemProtocol;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol {{ prefix }}{{ module_info.name }}CellItemsFactoryInput <NSObject>
+
+- (NSArray<id<RSBTableViewCellItemProtocol>> *)cellItemsForObjects:(NSArray *)objects;
+
+@end
+
+NS_ASSUME_NONNULL_END

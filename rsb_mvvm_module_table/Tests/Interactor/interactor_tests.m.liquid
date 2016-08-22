@@ -1,0 +1,32 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
+#import "{{ prefix }}{{ module_info.name }}Interactor.h"
+
+@interface {{ prefix }}{{ module_info.name }}InteractorTests : XCTestCase
+
+@property (nonatomic, strong) {{ prefix }}{{ module_info.name }}Interactor *interactor;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}InteractorTests
+
+#pragma mark - Setup environment
+
+- (void)setUp {
+    [super setUp];
+
+    self.interactor = [[{{ prefix }}{{ module_info.name }}Interactor alloc] init];
+}
+
+- (void)tearDown {
+    self.interactor = nil;
+
+    [super tearDown];
+}
+
+#pragma mark - {{ prefix }}{{ module_info.name }}InteractorInput methods tests
+
+@end

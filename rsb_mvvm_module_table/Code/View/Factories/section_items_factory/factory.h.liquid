@@ -1,0 +1,15 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactoryInput.h"
+@protocol {{ prefix }}{{ module_info.name }}CellItemsFactoryInput;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface {{ prefix }}{{ module_info.name }}SectionItemsFactory : NSObject <{{ prefix }}{{ module_info.name }}SectionItemsFactoryInput>
+
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}CellItemsFactoryInput> cellItemsFactory;
+
+@end
+
+NS_ASSUME_NONNULL_END

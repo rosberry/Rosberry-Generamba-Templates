@@ -1,0 +1,13 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
+#import "{{ prefix }}{{ module_info.name }}ModuleInput.h"
+@protocol {{ prefix }}{{ module_info.name }}InteractorInput;
+@protocol {{ prefix }}{{ module_info.name }}RouterInput;
+
+@interface {{ prefix }}{{ module_info.name }}ViewModel : NSObject <{{ prefix }}{{ module_info.name }}ViewOutput, {{ prefix }}{{ module_info.name }}ModuleInput>
+
+@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}InteractorInput> interactor;
+@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}RouterInput> router;
+
+@end

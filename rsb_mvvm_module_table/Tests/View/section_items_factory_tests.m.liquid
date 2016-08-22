@@ -1,0 +1,76 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
+#import <RSBTableViewSectionItemProtocol.h>
+
+@interface {{ prefix }}{{ module_info.name }}SectionItemsFactoryTests : XCTestCase
+
+@property (nonatomic) {{ prefix }}{{ module_info.name }}SectionItemsFactory *factory;
+@property (nonatomic) NSArray *objects;
+@property (nonatomic) NSArray<id<RSBTableViewSectionItemProtocol>> *sectionItems;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}SectionItemsFactoryTests
+
+- (void)setUp {
+    [super setUp];
+    self.factory = [[{{ prefix }}{{ module_info.name }}SectionItemsFactory alloc] init];
+    self.factory.cellItemsFactory = [[{{ prefix }}{{ module_info.name }}CellItemsFactory alloc] init];
+}
+
+- (void)tearDown {
+    self.factory = nil;
+    [super tearDown];
+}
+
+- (void)runWhenCondition {
+    self.sectionItems = [self.factory sectionItemsForObjects:self.objects];
+}
+
+#pragma mark - interface methods tests
+
+- (void)testThatFactoryReturnZeroSectionItemsForEmptyObjectsArray {
+    // given
+    self.objects = @[];
+    
+    // when
+    [self runWhenCondition];
+    
+    // then
+    XCTAssertEqual(self.sectionItems.count, 1);
+}
+
+- (void)testThatFactoryReturnOnlyOneSection {
+    // given
+    self.objects = @[[NSObject new],
+                     [NSObject new],
+                     [NSObject new]];
+    
+    // when
+    [self runWhenCondition];
+    
+    // then
+    XCTAssertEqual(self.sectionItems.count, 1);
+    XCTAssertEqual(self.sectionItems.firstObject.cellItems.count, self.objects.count);
+}
+
+- (void)testThatSectionItemConformsToProtocol {
+    // given
+    self.objects = @[[NSObject new],
+                     [NSObject new],
+                     [NSObject new]];
+    
+    // when
+    [self runWhenCondition];
+    
+    // then
+    for (id<RSBTableViewSectionItemProtocol> sectionItem in self.sectionItems) {
+        XCTAssertTrue([sectionItem conformsToProtocol:@protocol(RSBTableViewSectionItemProtocol)]);
+    }
+}
+
+@end

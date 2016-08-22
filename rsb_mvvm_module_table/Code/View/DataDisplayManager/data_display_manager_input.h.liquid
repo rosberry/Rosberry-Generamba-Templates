@@ -1,0 +1,14 @@
+{% include 'header' %}
+
+#import <Foundation/Foundation.h>
+@class UITableView;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@protocol {{ prefix }}{{ module_info.name }}DataDisplayManagerInput <NSObject>
+
+- (void)displayObjects:(NSArray *)objects inTableView:(UITableView *)tableView;
+
+@end
+
+NS_ASSUME_NONNULL_END

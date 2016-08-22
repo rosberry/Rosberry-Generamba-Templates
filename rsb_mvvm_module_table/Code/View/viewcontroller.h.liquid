@@ -1,0 +1,12 @@
+{% include 'header' %}
+
+#import <UIKit/UIKit.h>
+@protocol {{ prefix }}{{ module_info.name }}ViewOutput;
+@protocol {{ prefix }}{{ module_info.name }}DataDisplayManagerInput;
+
+@interface {{ prefix }}{{ module_info.name }}ViewController : UIViewController
+
+@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}DataDisplayManagerInput> dataDisplayManager;
+
+@end

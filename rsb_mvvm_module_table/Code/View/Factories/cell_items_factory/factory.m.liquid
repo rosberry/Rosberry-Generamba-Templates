@@ -1,0 +1,18 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItem.h"
+
+@implementation {{ prefix }}{{ module_info.name }}CellItemsFactory
+
+- (NSArray<id<RSBTableViewCellItemProtocol>> *)cellItemsForObjects:(NSArray *)objects {
+    NSMutableArray<id<RSBTableViewCellItemProtocol>> *cellItems = [NSMutableArray array];
+    for (id object in objects) {
+        {{ prefix }}{{ module_info.name }}BaseTableViewCellItem *cellItem = [[{{ prefix }}{{ module_info.name }}BaseTableViewCellItem alloc] init];
+        cellItem.object = object;
+        [cellItems addObject:cellItem];
+    }
+    return [NSArray arrayWithArray:cellItems];
+}
+
+@end

@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+#import <UIKit/UIKit.h>
+#import "{{ prefix }}{{ module_info.name }}DataDisplayManager.h"
+#import "{{ prefix }}{{ module_info.name }}SectionItemsFactoryInput.h"
+
+#import <RSBTableViewManager.h>
+
+@implementation {{ prefix }}{{ module_info.name }}DataDisplayManager
+
+- (void)displayObjects:(NSArray *)objects inTableView:(UITableView *)tableView {
+    if (!self.tableViewManager || ![self.tableViewManager.tableView isEqual:tableView]) {
+        self.tableViewManager = [[RSBTableViewManager alloc] initWithTableView:tableView];
+    }
+    
+    self.tableViewManager.sectionItems = [self.sectionItemsFactory sectionItemsForObjects:objects];
+}
+
+@end

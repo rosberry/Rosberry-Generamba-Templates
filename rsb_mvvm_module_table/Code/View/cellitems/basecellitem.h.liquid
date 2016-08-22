@@ -1,0 +1,9 @@
+{% include 'header' %}
+
+#import <RSBTableViewManager/RSBTableViewCellItem.h>
+
+@interface {{ prefix }}{{ module_info.name }}BaseTableViewCellItem : RSBTableViewCellItem
+
+@property (nonatomic) id object;
+
+@end

@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface {{ prefix }}{{ module_info.name }}DataDisplayManager : NSObject <{{ prefix }}{{ module_info.name }}DataDisplayManagerInput>
 
-@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}SectionItemsFactoryInput> sectionItemsFactory;
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}SectionItemsFactoryInput> sectionItemsFactory;
 @property (nonatomic) RSBTableViewManager *tableViewManager;
 
 @end

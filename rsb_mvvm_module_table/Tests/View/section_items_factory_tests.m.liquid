@@ -1,15 +1,17 @@
 {% include 'header' %}
 
 #import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
 
 #import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
 #import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}DataContainer.h"
 #import <RSBTableViewSectionItemProtocol.h>
 
 @interface {{ prefix }}{{ module_info.name }}SectionItemsFactoryTests : XCTestCase
 
 @property (nonatomic) {{ prefix }}{{ module_info.name }}SectionItemsFactory *factory;
-@property (nonatomic) NSArray *objects;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}DataContainer *container;
 @property (nonatomic) NSArray<id<RSBTableViewSectionItemProtocol>> *sectionItems;
 
 @end
@@ -18,24 +20,28 @@
 
 - (void)setUp {
     [super setUp];
+
     self.factory = [[{{ prefix }}{{ module_info.name }}SectionItemsFactory alloc] init];
     self.factory.cellItemsFactory = [[{{ prefix }}{{ module_info.name }}CellItemsFactory alloc] init];
+    self.container = OCMClassMock([{{ prefix }}{{ module_info.name }}DataContainer class]);
 }
 
 - (void)tearDown {
+    self.container = nil;
     self.factory = nil;
+
     [super tearDown];
 }
 
 - (void)runWhenCondition {
-    self.sectionItems = [self.factory sectionItemsForObjects:self.objects];
+    self.sectionItems = [self.factory sectionItemsForContainer:self.container];
 }
 
 #pragma mark - interface methods tests
 
-- (void)testThatFactoryReturnZeroSectionItemsForEmptyObjectsArray {
+- (void)testThatFactoryReturnOneSectionItemsForEmptyObjectsArray {
     // given
-    self.objects = @[];
+    self.container.objects = @[];
     
     // when
     [self runWhenCondition];
@@ -46,23 +52,23 @@
 
 - (void)testThatFactoryReturnOnlyOneSection {
     // given
-    self.objects = @[[NSObject new],
-                     [NSObject new],
-                     [NSObject new]];
+    self.container.objects = @[[NSObject new],
+                               [NSObject new],
+                               [NSObject new]];
     
     // when
     [self runWhenCondition];
     
     // then
     XCTAssertEqual(self.sectionItems.count, 1);
-    XCTAssertEqual(self.sectionItems.firstObject.cellItems.count, self.objects.count);
+    XCTAssertEqual(self.sectionItems.firstObject.cellItems.count, self.container.objects.count);
 }
 
 - (void)testThatSectionItemConformsToProtocol {
     // given
-    self.objects = @[[NSObject new],
-                     [NSObject new],
-                     [NSObject new]];
+    self.container.objects = @[[NSObject new],
+                               [NSObject new],
+                               [NSObject new]];
     
     // when
     [self runWhenCondition];

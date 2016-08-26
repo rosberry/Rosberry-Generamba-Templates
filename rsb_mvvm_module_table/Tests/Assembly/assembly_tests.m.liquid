@@ -165,6 +165,9 @@
     NSArray *protocols = @[
                            @protocol({{ prefix }}{{ module_info.name }}CellItemsFactoryInput)
                            ];
+    NSArray *dependencies = @[
+                              RamblerSelector(output)
+                              ];
     
     // when
     id result = [self.assembly cellItemsFactory{{ module_info.name }}Module];
@@ -173,7 +176,8 @@
     RamblerTyphoonAssemblyTestsTypeDescriptor *descriptor = [RamblerTyphoonAssemblyTestsTypeDescriptor descriptorWithClass:targetClass
                                                                                                               andProtocols:protocols];
     [self verifyTargetDependency:result
-                  withDescriptor:descriptor];
+                  withDescriptor:descriptor
+                  dependencies:dependencies];
 }
 
 @end

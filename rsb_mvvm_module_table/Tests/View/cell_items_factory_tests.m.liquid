@@ -3,12 +3,13 @@
 #import <XCTest/XCTest.h>
 #import <OCMock/OCMock.h>
 #import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
+#import "{{ prefix }}{{ module_info.name }}DataContainer.h"
 #import <RSBTableViewCellItemProtocol.h>
 
 @interface {{ prefix }}{{ module_info.name }}CellItemsFactoryTests : XCTestCase
 
 @property (nonatomic) {{ prefix }}{{ module_info.name }}CellItemsFactory *factory;
-@property (nonatomic) NSArray *objects;
+@property (nonatomic) {{ prefix }}{{ module_info.name }}DataContainer *container;
 @property (nonatomic) NSArray<id<RSBTableViewCellItemProtocol>> *cellItems;
 
 @end
@@ -17,23 +18,27 @@
 
 - (void)setUp {
     [super setUp];
+
     self.factory = [[{{ prefix }}{{ module_info.name }}CellItemsFactory alloc] init];
+    self.container = OCMClassMock([{{ prefix }}{{ module_info.name }}DataContainer class]);
 }
 
 - (void)tearDown {
+    self.container = nil;
     self.factory = nil;
+
     [super tearDown];
 }
 
 - (void)runWhenCondition {
-    self.cellItems = [self.factory cellItemsForObjects:self.objects];
+    self.cellItems = [self.factory cellItemsForContainer:self.container];
 }
 
 #pragma mark - interface methods tests
 
 - (void)testThatFactoryReturnZeroCellItemsForEmptyObjectsArray {
     // given
-    self.objects = @[];
+    self.container.objects = @[];
     
     // when
     [self runWhenCondition];
@@ -44,22 +49,22 @@
 
 - (void)testThatFactoryReturnEqualCountOfCellItems {
     // given
-    self.objects = @[[NSObject new],
-                     [NSObject new],
-                     [NSObject new]];
+    self.container.objects = @[[NSObject new],
+                               [NSObject new],
+                               [NSObject new]];
     
     // when
     [self runWhenCondition];
     
     // then
-    XCTAssertEqual(self.cellItems.count, self.objects.count);
+    XCTAssertEqual(self.cellItems.count, self.container.objects.count);
 }
 
 - (void)testThatCellItemsConformsToProtocol {
     // given
-    self.objects = @[[NSObject new],
-                     [NSObject new],
-                     [NSObject new]];
+    self.container.objects = @[[NSObject new],
+                               [NSObject new],
+                               [NSObject new]];
     
     // when
     [self runWhenCondition];

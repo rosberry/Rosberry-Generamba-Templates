@@ -26,6 +26,8 @@ code_files:
 - {name: View/Factories/CellItemsFactory/CellItemsFactoryInput.h, path: Code/View/Factories/cell_items_factory/factory_input.h.liquid}
 - {name: View/Factories/CellItemsFactory/CellItemsFactory.h, path: Code/View/Factories/cell_items_factory/factory.h.liquid}
 - {name: View/Factories/CellItemsFactory/CellItemsFactory.m, path: Code/View/Factories/cell_items_factory/factory.m.liquid}
+- {name: View/DataContainers/DataContainer.h, path: Code/View/DataContainers/data_container.h.liquid}
+- {name: View/DataContainers/DataContainer.m, path: Code/View/DataContainers/data_container.m.liquid}
 
 # ViewModel layer
 - {name: ViewModel/ModuleInput.h, path: Code/ViewModel/module_input.h.liquid}
@@ -49,6 +51,7 @@ test_files:
 - {name: Assembly/Assembly_Testable.h, path: Tests/Assembly/assembly_testable.h.liquid}
 
 # View tests
+- {name: View/DataDisplayManagerTests.m, path: Tests/View/data_display_manager_tests.m.liquid}
 - {name: View/ViewControllerTests.m, path: Tests/View/view_tests.m.liquid}
 - {name: View/SectionItemsFactoryTests.m, path: Tests/View/section_items_factory_tests.m.liquid}
 - {name: View/CellItemsFactoryTests.m, path: Tests/View/cell_items_factory_tests.m.liquid}

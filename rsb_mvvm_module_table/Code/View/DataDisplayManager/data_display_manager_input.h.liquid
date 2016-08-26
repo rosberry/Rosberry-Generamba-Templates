@@ -2,12 +2,15 @@
 
 #import <Foundation/Foundation.h>
 @class UITableView;
+@class {{ prefix }}{{ module_info.name }}DataContainer;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol {{ prefix }}{{ module_info.name }}DataDisplayManagerInput <NSObject>
 
-- (void)displayObjects:(NSArray *)objects inTableView:(UITableView *)tableView;
+- (void)displayContainer:({{ prefix }}{{ module_info.name }}DataContainer *)container
+            inTableView:(UITableView *)tableView
+         scrollDelegate:(id<UIScrollViewDelegate>)scrollDelegate;
 
 @end
 

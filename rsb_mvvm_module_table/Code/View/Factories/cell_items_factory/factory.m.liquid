@@ -2,12 +2,14 @@
 
 #import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
 #import "{{ prefix }}{{ module_info.name }}BaseTableViewCellItem.h"
+#import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
+#import "{{ prefix }}{{ module_info.name }}DataContainer.h"
 
 @implementation {{ prefix }}{{ module_info.name }}CellItemsFactory
 
-- (NSArray<id<RSBTableViewCellItemProtocol>> *)cellItemsForObjects:(NSArray *)objects {
+- (NSArray<id<RSBTableViewCellItemProtocol>> *)cellItemsForContainer:({{ prefix }}{{ module_info.name }}DataContainer *)container {
     NSMutableArray<id<RSBTableViewCellItemProtocol>> *cellItems = [NSMutableArray array];
-    for (id object in objects) {
+    for (id object in container.objects) {
         {{ prefix }}{{ module_info.name }}BaseTableViewCellItem *cellItem = [[{{ prefix }}{{ module_info.name }}BaseTableViewCellItem alloc] init];
         cellItem.object = object;
         [cellItems addObject:cellItem];

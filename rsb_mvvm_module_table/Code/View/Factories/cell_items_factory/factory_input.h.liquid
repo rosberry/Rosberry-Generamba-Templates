@@ -2,12 +2,13 @@
 
 #import <Foundation/Foundation.h>
 @protocol RSBTableViewCellItemProtocol;
+@class {{ prefix }}{{ module_info.name }}DataContainer;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol {{ prefix }}{{ module_info.name }}CellItemsFactoryInput <NSObject>
 
-- (NSArray<id<RSBTableViewCellItemProtocol>> *)cellItemsForObjects:(NSArray *)objects;
+- (NSArray<id<RSBTableViewCellItemProtocol>> *)cellItemsForContainer:({{ prefix }}{{ module_info.name }}DataContainer *)container;
 
 @end
 

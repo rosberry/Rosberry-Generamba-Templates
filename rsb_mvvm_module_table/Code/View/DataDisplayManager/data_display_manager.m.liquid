@@ -8,12 +8,15 @@
 
 @implementation {{ prefix }}{{ module_info.name }}DataDisplayManager
 
-- (void)displayObjects:(NSArray *)objects inTableView:(UITableView *)tableView {
+- (void)displayContainer:({{ prefix }}{{ module_info.name }}DataContainer *)container
+             inTableView:(UITableView *)tableView
+          scrollDelegate:(id<UIScrollViewDelegate>)scrollDelegate {
     if (!self.tableViewManager || ![self.tableViewManager.tableView isEqual:tableView]) {
         self.tableViewManager = [[RSBTableViewManager alloc] initWithTableView:tableView];
     }
+    self.tableViewManager.scrollDelegate = scrollDelegate;
     
-    self.tableViewManager.sectionItems = [self.sectionItemsFactory sectionItemsForObjects:objects];
+    self.tableViewManager.sectionItems = [self.sectionItemsFactory sectionItemsForContainer:container];
 }
 
 @end

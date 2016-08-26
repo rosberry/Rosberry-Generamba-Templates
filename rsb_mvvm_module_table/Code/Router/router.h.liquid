@@ -1,7 +1,7 @@
 {% include 'header' %}
 
 #import "{{ prefix }}{{ module_info.name }}RouterInput.h"
-#import "RSBTransitionHandlerProtocol.h"
+@protocol RSBTransitionHandlerProtocol;
 
 @interface {{ prefix }}{{ module_info.name }}Router : NSObject <{{ prefix }}{{ module_info.name }}RouterInput>
 

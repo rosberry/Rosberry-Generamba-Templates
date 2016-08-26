@@ -17,6 +17,8 @@
                           configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self viewModel{{ module_info.name }}Module]];
+                              [definition injectProperty:@selector(dataDisplayManager)
+                                                    with:[self dataDisplayManager{{ module_info.name }}Module]];
                           }];
 }
 
@@ -62,7 +64,11 @@
 }
 
 - ({{ prefix }}{{ module_info.name }}CellItemsFactory *)cellItemsFactory{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}CellItemsFactory class]];
+    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}CellItemsFactory class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(output)
+                                                    with:[self viewModel{{ module_info.name }}Module]];
+                          }];
 }
 
 @end

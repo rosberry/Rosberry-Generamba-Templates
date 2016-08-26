@@ -7,9 +7,9 @@
 
 @implementation {{ prefix }}{{ module_info.name }}SectionItemsFactory
 
-- (NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItemsForObjects:(NSArray *)objects {
+- (NSArray<id<RSBTableViewSectionItemProtocol>> *)sectionItemsForContainer:({{ prefix }}{{ module_info.name }}DataContainer *)container {
     RSBTableViewSectionItem *sectionItem = [[RSBTableViewSectionItem alloc] init];
-    sectionItem.cellItems = [self.cellItemsFactory cellItemsForObjects:objects];
+    sectionItem.cellItems = [self.cellItemsFactory cellItemsForContainer:container];
     return @[sectionItem];
 }
 

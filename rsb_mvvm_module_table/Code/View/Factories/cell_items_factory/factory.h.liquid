@@ -2,7 +2,10 @@
 
 #import <Foundation/Foundation.h>
 #import "{{ prefix }}{{ module_info.name }}CellItemsFactoryInput.h"
+@protocol {{ prefix }}{{ module_info.name }}ViewOutput;
 
 @interface {{ prefix }}{{ module_info.name }}CellItemsFactory : NSObject <{{ prefix }}{{ module_info.name }}CellItemsFactoryInput>
+
+@property (nonatomic, strong) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
 
 @end

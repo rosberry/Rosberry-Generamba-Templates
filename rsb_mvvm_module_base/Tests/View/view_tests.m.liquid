@@ -1,0 +1,49 @@
+{% include 'header' %}
+
+#import <XCTest/XCTest.h>
+#import <OCMock/OCMock.h>
+
+#import "{{ prefix }}{{ module_info.name }}ViewController.h"
+#import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
+
+@interface {{ prefix }}{{ module_info.name }}ViewControllerTests : XCTestCase
+
+@property (nonatomic) {{ prefix }}{{ module_info.name }}ViewController *controller;
+@property (nonatomic) id mockOutput;
+
+@end
+
+@implementation {{ prefix }}{{ module_info.name }}ViewControllerTests
+
+#pragma mark - Setup environment
+
+- (void)setUp {
+    [super setUp];
+
+    self.controller = [[{{ prefix }}{{ module_info.name }}ViewController alloc] init];
+    self.mockOutput = OCMProtocolMock(@protocol({{ prefix }}{{ module_info.name }}ViewOutput));
+    self.controller.output = self.mockOutput;
+}
+
+- (void)tearDown {
+    self.controller = nil;
+    self.mockOutput = nil;
+
+    [super tearDown];
+}
+
+#pragma mark - Lifecycle tests
+
+- (void)testThatControllerNotifiesViewModelOnDidLoad {
+	// given
+
+	// when
+	[self.controller viewDidLoad];
+
+	// then
+	OCMVerify([self.mockOutput didTriggerViewReadyEvent]);
+}
+
+#pragma mark - interface methods tests
+
+@end

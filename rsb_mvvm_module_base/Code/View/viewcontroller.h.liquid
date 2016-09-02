@@ -1,0 +1,10 @@
+{% include 'header' %}
+
+#import <UIKit/UIKit.h>
+@protocol {{ prefix }}{{ module_info.name }}ViewOutput;
+
+@interface {{ prefix }}{{ module_info.name }}ViewController : UIViewController
+
+@property (nonatomic) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
+
+@end

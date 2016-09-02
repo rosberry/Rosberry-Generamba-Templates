@@ -1,9 +1,17 @@
 {% include 'header' %}
-
+{%
+if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}Router.h"{% 
+endif %}
 #import "{{ prefix }}{{ module_info.name }}RouterInput.h"
-#import "RSBTransitionHandlerProtocol.h"
+@protocol RSBTransitionHandlerProtocol;
 
-@interface {{ prefix }}{{ module_info.name }}Router : NSObject <{{ prefix }}{{ module_info.name }}RouterInput>
+@interface {{ prefix }}{{ module_info.name }}Router : {% 
+      if custom_parameters.inherit != nil 
+      %}{{ prefix }}{{ custom_parameters.inherit }}Router{% 
+      else 
+      %}NSObject{% 
+      endif %} <{{ prefix }}{{ module_info.name }}RouterInput>
 
 @property (nonatomic, weak) id<RSBTransitionHandlerProtocol> transitionHandler;
 

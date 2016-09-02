@@ -4,41 +4,97 @@
 #import "{{ prefix }}{{ module_info.name }}ViewController.h"
 #import "{{ prefix }}{{ module_info.name }}Interactor.h"
 #import "{{ prefix }}{{ module_info.name }}ViewModel.h"
-#import "{{ prefix }}{{ module_info.name }}Router.h"
+#import "{{ prefix }}{{ module_info.name }}Router.h"{%
+  if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}ModuleComponents.h"{% 
+  endif %}
 
 @implementation {{ prefix }}{{ module_info.name }}Assembly
 
 - ({{ prefix }}{{ module_info.name }}ViewController *)view{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}ViewController class]
-                          configuration:^(TyphoonDefinition *definition) {
+    return [TyphoonDefinition {% 
+      if custom_parameters.inherit != nil 
+      %}withParent:[self.baseComponents view{{ custom_parameters.inherit }}Module]
+                                   class:{% 
+      else 
+      %}withClass:{% 
+      endif %}[{{ prefix }}{{ module_info.name }}ViewController class]
+                          {% 
+      if custom_parameters.inherit != nil 
+      %} configuration:^(TyphoonDefinition *definition) {
+                               [definition injectProperty:@selector(output)
+                                                     with:[self viewModel{{ module_info.name }}Module]];
+                           }];{% 
+      else 
+      %}configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(output)
                                                     with:[self viewModel{{ module_info.name }}Module]];
-                          }];
+                          }];{% 
+      endif %}
 }
 
 - ({{ prefix }}{{ module_info.name }}Interactor *)interactor{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}Interactor class]
-                          configuration:^(TyphoonDefinition *definition) {
+    return [TyphoonDefinition {% 
+      if custom_parameters.inherit != nil
+      %}withParent:[self.baseComponents interactor{{ custom_parameters.inherit }}Module]
+                                   class:{%
+      else %}withClass:{%
+      endif %}[{{ prefix }}{{ module_info.name }}Interactor class]
+                          {% 
+      if custom_parameters.inherit != nil 
+      %} configuration:^(TyphoonDefinition *definition) {
+                               
+                           }];{% 
+      else 
+      %}configuration:^(TyphoonDefinition *definition) {
                               
-                          }];
+                          }];{% 
+      endif %}
 }
 
 - ({{ prefix }}{{ module_info.name }}ViewModel *)viewModel{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}ViewModel class]
-                          configuration:^(TyphoonDefinition *definition) {
+    return [TyphoonDefinition {%
+      if custom_parameters.inherit != nil
+      %}withParent:[self.baseComponents viewModel{{ custom_parameters.inherit }}Module]
+                                   class:{%
+      else %}withClass:{%
+      endif %}[{{ prefix }}{{ module_info.name }}ViewModel class]
+                          {% 
+      if custom_parameters.inherit != nil 
+      %} configuration:^(TyphoonDefinition *definition) {
+                               [definition injectProperty:@selector(interactor)
+                                                     with:[self interactor{{ module_info.name }}Module]];
+                               [definition injectProperty:@selector(router)
+                                                     with:[self router{{ module_info.name }}Module]];
+                           }];{% 
+      else 
+      %}configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(interactor)
                                                     with:[self interactor{{ module_info.name }}Module]];
                               [definition injectProperty:@selector(router)
                                                     with:[self router{{ module_info.name }}Module]];
-                          }];
+                          }];{% 
+      endif %}
 }
 
 - ({{ prefix }}{{ module_info.name }}Router *)router{{ module_info.name }}Module {
-    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}Router class]
-                          configuration:^(TyphoonDefinition *definition) {
+    return [TyphoonDefinition {%
+      if custom_parameters.inherit != nil %}withParent:[self.baseComponents router{{ custom_parameters.inherit }}Module]
+                                   class:{%
+      else %}withClass:{%
+      endif %}[{{ prefix }}{{ module_info.name }}Router class]
+                          {% 
+      if custom_parameters.inherit != nil 
+      %} configuration:^(TyphoonDefinition *definition) {
+                               [definition injectProperty:@selector(transitionHandler)
+                                                     with:[self view{{ module_info.name }}Module]];
+                           }];{% 
+      else 
+      %}configuration:^(TyphoonDefinition *definition) {
                               [definition injectProperty:@selector(transitionHandler)
                                                     with:[self view{{ module_info.name }}Module]];
-                          }];
+                          }];{% 
+      endif %}
 }
 
 @end

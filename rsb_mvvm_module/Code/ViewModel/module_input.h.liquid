@@ -1,8 +1,16 @@
 {% include 'header' %}
 
-#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>{%
+if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}ModuleInput.h"{% 
+endif %}
 
-@protocol {{ prefix }}{{ module_info.name }}ModuleInput 
+@protocol {{ prefix }}{{ module_info.name }}ModuleInput {% 
+      if custom_parameters.inherit != nil 
+      %}<{{ prefix }}{{ custom_parameters.inherit }}ModuleInput>{% 
+      else 
+      %}<NSObject>{% 
+      endif %}
 
 - (void)configureModule;
 

@@ -1,7 +1,15 @@
 {% include 'header' %}
 
-#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>{%
+if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}InteractorInput.h"{% 
+endif %}
 
-@protocol {{ prefix }}{{ module_info.name }}InteractorInput <NSObject>
+@protocol {{ prefix }}{{ module_info.name }}InteractorInput {% 
+      if custom_parameters.inherit != nil 
+      %}<{{ prefix }}{{ custom_parameters.inherit }}InteractorInput>{% 
+      else 
+      %}<NSObject>{% 
+      endif %}
 
 @end

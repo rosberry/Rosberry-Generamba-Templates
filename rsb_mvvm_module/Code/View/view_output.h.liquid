@@ -1,8 +1,16 @@
 {% include 'header' %}
 
-#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>{%
+if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}ViewOutput.h"{% 
+endif %}
 
-@protocol {{ prefix }}{{ module_info.name }}ViewOutput <NSObject>
+@protocol {{ prefix }}{{ module_info.name }}ViewOutput {% 
+      if custom_parameters.inherit != nil 
+      %}<{{ prefix }}{{ custom_parameters.inherit }}ViewOutput>{% 
+      else 
+      %}<NSObject>{% 
+      endif %}
 
 - (void)didTriggerViewReadyEvent;
 

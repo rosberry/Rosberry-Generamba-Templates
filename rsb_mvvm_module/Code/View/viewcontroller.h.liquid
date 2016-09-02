@@ -1,9 +1,22 @@
 {% include 'header' %}
 
-#import <UIKit/UIKit.h>
-@protocol {{ prefix }}{{ module_info.name }}ViewOutput;
+#import <UIKit/UIKit.h>{%
+if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}ViewController.h"{% 
+endif %}
+{% 
+      if custom_parameters.inherit != nil 
+      %}#import "{{ prefix }}{{ module_info.name }}ViewOutput.h"{% 
+      else 
+      %}@protocol {{ prefix }}{{ module_info.name }}ViewOutput;{% 
+      endif %}
 
-@interface {{ prefix }}{{ module_info.name }}ViewController : UIViewController
+@interface {{ prefix }}{{ module_info.name }}ViewController : {% 
+      if custom_parameters.inherit != nil 
+      %}{{ prefix }}{{ custom_parameters.inherit }}ViewController{% 
+      else 
+      %}UIViewController{% 
+      endif %}
 
 @property (nonatomic) id<{{ prefix }}{{ module_info.name }}ViewOutput> output;
 

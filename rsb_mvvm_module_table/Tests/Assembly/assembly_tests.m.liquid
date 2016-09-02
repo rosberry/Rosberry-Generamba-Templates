@@ -3,7 +3,10 @@
 #import <RamblerTyphoonUtils/AssemblyTesting.h>
 #import <Typhoon/Typhoon.h>
 
-#import "{{ prefix }}{{ module_info.name }}Assembly.h"
+#import "{{ prefix }}{{ module_info.name }}Assembly.h"{%
+if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}Assembly.h"{% 
+endif %}
 #import "{{ prefix }}{{ module_info.name }}Assembly_Testable.h"
 
 #import "{{ prefix }}{{ module_info.name }}ViewController.h"
@@ -29,7 +32,13 @@
     [super setUp];
 
     self.assembly = [[{{ prefix }}{{ module_info.name }}Assembly alloc] init];
-    [self.assembly activate];
+    {% 
+      if custom_parameters.inherit != nil 
+      %}{{ prefix }}{{ custom_parameters.inherit }}Assembly *baseAssembly = [[{{ prefix }}{{ custom_parameters.inherit }}Assembly alloc] init];
+    [self.assembly activateWithCollaboratingAssemblies:@[baseAssembly]];{% 
+      else 
+      %}[self.assembly activate];{% 
+      endif %}
 }
 
 - (void)tearDown {

@@ -1,9 +1,11 @@
 # Template information section
-name: "rsb_viper_controller_table"
-summary: "MVVM module template with UIViewController playing as a View. If ViewController with tableView and you use RSBTableViewManager this is right choice."
+name: "rsb_mvvm_module_table"
+summary: "MVVM module template with UIViewController playing as a View. If ViewController has table view and you use RSBTableViewManager this is right choice."
 author: "Anton Kovalev"
-version: "1.0"
+version: "1.1.0"
 license: "MIT"
+
+# Use custom parameter inherit If you want to inherit your module. 
 
 # The declarations for code files
 code_files:

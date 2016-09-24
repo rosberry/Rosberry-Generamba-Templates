@@ -6,6 +6,8 @@
 #import "{{ prefix }}{{ module_info.name }}SectionItemsFactory.h"
 #import "{{ prefix }}{{ module_info.name }}CellItemsFactory.h"
 #import "{{ prefix }}{{ module_info.name }}DataContainer.h"
+
+#import <RSBTableViewCellItemProtocol.h>
 #import <RSBTableViewSectionItemProtocol.h>
 
 @interface {{ prefix }}{{ module_info.name }}SectionItemsFactoryTests : XCTestCase
@@ -22,7 +24,6 @@
     [super setUp];
 
     self.factory = [[{{ prefix }}{{ module_info.name }}SectionItemsFactory alloc] init];
-    self.factory.cellItemsFactory = [[{{ prefix }}{{ module_info.name }}CellItemsFactory alloc] init];
     self.container = OCMClassMock([{{ prefix }}{{ module_info.name }}DataContainer class]);
 }
 
@@ -39,44 +40,20 @@
 
 #pragma mark - interface methods tests
 
-- (void)testThatFactoryReturnOneSectionItemsForEmptyObjectsArray {
+- (void)testThatReturnsCorrectSections {
     // given
-    self.container.objects = @[];
+    id mockCellItem = OCMProtocolMock(@protocol(RSBTableViewCellItemProtocol));
+    NSArray *mockCellItems = @[mockCellItem];
+    id mockCellItemFactory = OCMClassMock([KSTFavoritesCellItemsFactory class]);
+    OCMStub([mockCellItemFactory cellItemsForContainer:self.container]).andReturn(mockCellItems);
+    self.factory.cellItemsFactory = mockCellItemFactory;
     
     // when
     [self runWhenCondition];
     
     // then
     XCTAssertEqual(self.sectionItems.count, 1);
-}
-
-- (void)testThatFactoryReturnOnlyOneSection {
-    // given
-    self.container.objects = @[[NSObject new],
-                               [NSObject new],
-                               [NSObject new]];
-    
-    // when
-    [self runWhenCondition];
-    
-    // then
-    XCTAssertEqual(self.sectionItems.count, 1);
-    XCTAssertEqual(self.sectionItems.firstObject.cellItems.count, self.container.objects.count);
-}
-
-- (void)testThatSectionItemConformsToProtocol {
-    // given
-    self.container.objects = @[[NSObject new],
-                               [NSObject new],
-                               [NSObject new]];
-    
-    // when
-    [self runWhenCondition];
-    
-    // then
-    for (id<RSBTableViewSectionItemProtocol> sectionItem in self.sectionItems) {
-        XCTAssertTrue([sectionItem conformsToProtocol:@protocol(RSBTableViewSectionItemProtocol)]);
-    }
+    XCTAssertEqual(self.sectionItems.firstObject.cellItems, mockCellItems);
 }
 
 @end

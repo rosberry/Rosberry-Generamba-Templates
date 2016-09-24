@@ -53,7 +53,8 @@ endif %}
     // given
     Class targetClass = [{{ prefix }}{{ module_info.name }}ViewController class];
     NSArray *dependencies = @[
-                              RamblerSelector(output)
+                              RamblerSelector(output),
+                              RamblerSelector(dataDisplayManager)
                               ];
 
     // when

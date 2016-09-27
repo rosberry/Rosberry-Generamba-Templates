@@ -1,8 +1,15 @@
 {% include 'header' %}
-
+{%
+if custom_parameters.inherit != nil %}
+#import "{{ prefix }}{{ custom_parameters.inherit }}Interactor.h"{% 
+endif %}
 #import "{{ prefix }}{{ module_info.name }}InteractorInput.h"
-@protocol {{ prefix }}{{ module_info.name }}InteractorOutput;
 
-@interface {{ prefix }}{{ module_info.name }}Interactor : NSObject <{{ prefix }}{{ module_info.name }}InteractorInput>
+@interface {{ prefix }}{{ module_info.name }}Interactor : {% 
+      if custom_parameters.inherit != nil 
+      %}{{ prefix }}{{ custom_parameters.inherit }}Interactor{% 
+      else 
+      %}NSObject{% 
+      endif %} <{{ prefix }}{{ module_info.name }}InteractorInput>
 
 @end

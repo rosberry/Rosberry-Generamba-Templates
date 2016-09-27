@@ -2,10 +2,13 @@
 
 #import "{{ prefix }}{{ module_info.name }}Router.h"
 #import "RSBTransitionHandlerProtocol.h"
-#import "RSBOpenModulePromise.h"
 
 @implementation {{ prefix }}{{ module_info.name }}Router
-
+{%
+if custom_parameters.inherit != nil %}
+@dynamic transitionHandler;
+{% 
+endif %}
 #pragma mark - {{ prefix }}{{ module_info.name }}RouterInput methods
 
 @end

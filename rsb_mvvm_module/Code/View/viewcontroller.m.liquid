@@ -3,7 +3,11 @@
 #import "{{ prefix }}{{ module_info.name }}ViewController.h"
 #import "{{ prefix }}{{ module_info.name }}ViewOutput.h"
 
-@implementation {{ prefix }}{{ module_info.name }}ViewController
+@implementation {{ prefix }}{{ module_info.name }}ViewController{%
+if custom_parameters.inherit != nil %}
+
+@dynamic output;{% 
+endif %}
 
 #pragma mark - Life cycle
 

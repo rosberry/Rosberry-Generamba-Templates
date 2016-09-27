@@ -4,11 +4,11 @@
 
 @implementation {{ prefix }}{{ module_info.name }}BaseTableViewCellItem
 
-- (void)configureCell:(UITableViewCell *)cell {
+- (void)configureCell:(UITableViewCell *)cell inTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
 	// Configure your cell here
 }
 
-- (CGFloat)heightForTableView:(UITableView *)tableView {
+- (CGFloat)heightInTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
     return 0;
 }
 

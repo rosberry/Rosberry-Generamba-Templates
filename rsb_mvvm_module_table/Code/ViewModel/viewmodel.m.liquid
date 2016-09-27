@@ -5,7 +5,12 @@
 #import "{{ prefix }}{{ module_info.name }}RouterInput.h"
 
 @implementation {{ prefix }}{{ module_info.name }}ViewModel
-
+{%
+if custom_parameters.inherit != nil %}
+@dynamic interactor;
+@dynamic router;
+{% 
+endif %}
 #pragma mark - {{ prefix }}{{ module_info.name }}ModuleInput methods
 
 - (void)configureModule {

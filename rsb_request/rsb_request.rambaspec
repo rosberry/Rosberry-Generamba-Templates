@@ -1,0 +1,26 @@
+# Template information section
+name: "rsb_request"
+summary: "Create request based on RSBRequest"
+author: "Anton Kovalev"
+version: "1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+  - {name: Request.h, path: Code/request.h.liquid}
+  - {name: Request.m, path: Code/request.m.liquid}
+
+  {% if custom_parameters.with contains "parameters" %}
+  - {name: RequestParameters.h, path: Code/request_parameters.h.liquid}
+  - {name: RequestParameters.m, path: Code/request_parameters.m.liquid}
+  {% endif %}
+
+  {% if custom_parameters.with contains "path_components" %}
+  - {name: RequestPathComponents.h, path: Code/request_path_components.h.liquid}
+  - {name: RequestPathComponents.m, path: Code/request_path_components.m.liquid}
+  {% endif %}
+
+  {% if custom_parameters.with contains "headers" %}
+  - {name: RequestHeaders.h, path: Code/request_headers.h.liquid}
+  - {name: RequestHeaders.m, path: Code/request_headers.m.liquid}
+  {% endif %}

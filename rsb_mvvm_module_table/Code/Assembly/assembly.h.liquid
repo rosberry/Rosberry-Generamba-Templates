@@ -9,7 +9,7 @@ endif %}
 @interface {{ prefix }}{{ module_info.name }}Assembly : TyphoonAssembly <RamblerInitialAssembly>{% 
 if custom_parameters.inherit != nil %}
 
-@property (nonatomic) TyphoonAssembly<{{ prefix }}{{ custom_parameters.inherit }}ModuleComponents> *baseComponents;{% 
+@property (nonatomic, readonly) TyphoonAssembly<{{ prefix }}{{ custom_parameters.inherit }}ModuleComponents> *baseComponents;{% 
 endif %}
 
 @end

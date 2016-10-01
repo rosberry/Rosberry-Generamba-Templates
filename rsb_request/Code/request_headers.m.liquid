@@ -1,0 +1,13 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}RequestHeaders.h"
+
+@implementation {{ prefix }}{{ module_info.name }}RequestHeaders
+
++ (EKObjectMapping *)objectMapping {
+    EKObjectMapping *mapping = [super objectMapping];
+    #warning Map headers here
+    return mapping;
+}
+
+@end

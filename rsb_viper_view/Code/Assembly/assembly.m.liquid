@@ -1,0 +1,56 @@
+{% include 'header' %}
+
+#import "{{ prefix }}{{ module_info.name }}Assembly.h"
+#import "{{ prefix }}{{ module_info.name }}View.h"
+#import "{{ prefix }}{{ module_info.name }}Interactor.h"
+#import "{{ prefix }}{{ module_info.name }}Presenter.h"
+#import "{{ prefix }}{{ module_info.name }}Router.h"
+#import "RSBTransitionsCoordinator.h"
+
+@implementation {{ prefix }}{{ module_info.name }}Assembly
+
+- ({{ prefix }}{{ module_info.name }}View *)view{{ module_info.name }}Module {
+    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}View class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(output)
+                                                    with:[self presenter{{ module_info.name }}Module]];
+                              [definition injectProperty:@selector(moduleInput)
+                                                    with:[self presenter{{ module_info.name }}Module]];
+                          }];
+}
+
+- ({{ prefix }}{{ module_info.name }}Interactor *)interactor{{ module_info.name }}Module {
+    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}Interactor class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(output)
+                                                    with:[self presenter{{ module_info.name }}Module]];
+                          }];
+}
+
+- ({{ prefix }}{{ module_info.name }}Presenter *)presenter{{ module_info.name }}Module {
+    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}Presenter class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(view)
+                                                    with:[self view{{ module_info.name }}Module]];
+                              [definition injectProperty:@selector(interactor)
+                                                    with:[self interactor{{ module_info.name }}Module]];
+                              [definition injectProperty:@selector(router)
+                                                    with:[self router{{ module_info.name }}Module]];
+                          }];
+}
+
+- ({{ prefix }}{{ module_info.name }}Router *)router{{ module_info.name }}Module {
+    return [TyphoonDefinition withClass:[{{ prefix }}{{ module_info.name }}Router class]
+                          configuration:^(TyphoonDefinition *definition) {
+                              [definition injectProperty:@selector(source)
+                                                    with:[self view{{ module_info.name }}Module]];
+                              [definition injectProperty:@selector(transitionsCoordinator)
+                                                    with:[self transitionsCoordinator{{ module_info.name }}Module]];
+                          }];
+}
+
+- (RSBTransitionsCoordinator *)transitionsCoordinator{{ module_info.name }}Module {
+    return [TyphoonDefinition withClass:[RSBTransitionsCoordinator class]];
+}
+
+@end

@@ -1,0 +1,14 @@
+# Template information section
+name: "rsb_swift_module"
+summary: "Base VIPER+MVVM template for presentation module in Swift project with simple DI logic."
+author: "Artem Novichkov"
+version: "0.1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: ModuleBuilder.swift, path: Code/ModuleBuilder.swift.liquid}
+- {name: ViewController.swift, path: Code/ViewController.swift.liquid}
+- {name: ViewModel.swift, path: Code/ViewModel.swift.liquid}
+- {name: Interactor.swift, path: Code/Interactor.swift.liquid}
+- {name: Router.swift, path: Code/Router.swift.liquid}

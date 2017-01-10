@@ -1,0 +1,16 @@
+{% include 'header' %}
+
+import UIKit
+
+class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
+    
+    var output: {{ prefix }}{{ module_info.name }}Presenter!
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        output.didTriggerViewReadyEvent()
+    }
+}
+

@@ -2,7 +2,7 @@
 
 import UIKit
 
-class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
+final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
     
     let viewModel: {{ prefix }}{{ module_info.name }}ViewModel
     
@@ -22,4 +22,3 @@ class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
         viewModel.didTriggerViewReadyEvent()
     }
 }
-

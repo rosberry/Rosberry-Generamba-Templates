@@ -1,0 +1,23 @@
+{% include 'header' %}
+
+import TableViewTools
+
+final class {{ prefix }}{{ module_info.name }}TableViewCellItem: TableViewCellItemProtocol {
+    
+    private let viewModel: {{ prefix }}{{ module_info.name }}TableViewModel
+    
+    var reuseType = ReuseType(cellClass: {{ prefix }}{{ module_info.name }}TableViewCell.self)
+    
+    init(viewModel: {{ prefix }}{{ module_info.name }}TableViewModel) {
+        self.viewModel = viewModel
+    }
+    
+    func height(in tableView: UITableView) -> CGFloat {
+        return 50
+    }
+    
+    func cell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
+        let cell: {{ prefix }}{{ module_info.name }}TableViewCell = tableView.dequeueReusableCell()
+        return cell
+    }
+}

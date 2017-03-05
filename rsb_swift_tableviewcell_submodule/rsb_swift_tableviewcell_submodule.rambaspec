@@ -1,0 +1,12 @@
+# Template information section
+name: "rsb_swift_tableviewcell_submodule"
+summary: "Template for UITableViewCell with ViewModel and CellItem classes."
+author: "Artem Novichkov"
+version: "0.1.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: TableViewCell.swift, path: Code/TableViewCell.swift.liquid}
+- {name: TableViewCellItem.swift, path: Code/TableViewCellItem.swift.liquid}
+- {name: TableViewModel.swift, path: Code/TableViewModel.swift.liquid}

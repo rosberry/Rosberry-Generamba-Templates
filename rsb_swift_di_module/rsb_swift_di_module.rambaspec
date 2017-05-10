@@ -1,8 +1,8 @@
 # Template information section
 name: "rsb_swift_di_module"
-summary: "Base VIPER+MVVM template for presentation module in Swift project with protocol composition and generics for DI in Interactors. Requires BaseInteractor class and TransitionHandler protocol for navigation."
+summary: "Base VIPER+MVVM template for presentation module in Swift project with protocol composition and generics for DI in Interactors. Requires TransitionHandler protocol for navigation."
 author: "Artem Novichkov"
-version: "0.1.1"
+version: "0.1.2"
 license: "MIT"
 
 # The declarations for code files

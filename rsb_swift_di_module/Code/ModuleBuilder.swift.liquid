@@ -2,7 +2,7 @@
 
 enum {{ prefix }}{{ module_info.name }}ModuleBuilder {
     
-    static func module(dependencies: {{ prefix }}{{ module_info.name }}Dependencies) -> {{ prefix }}{{ module_info.name }}ViewController {
+    static func module(dependencies: {{ prefix }}{{ module_info.name }}Dependencies? = nil) -> {{ prefix }}{{ module_info.name }}ViewController {
         let router = {{ prefix }}{{ module_info.name }}Router()
         let interactor = {{ prefix }}{{ module_info.name }}Interactor(dependencies: dependencies)
         let viewModel = {{ prefix }}{{ module_info.name }}ViewModel(router: router, interactor: interactor)

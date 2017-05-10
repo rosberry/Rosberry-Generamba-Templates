@@ -4,9 +4,9 @@ typealias {{ prefix }}{{ module_info.name }}Dependencies = Any
 
 final class {{ prefix }}{{ module_info.name }}Interactor: {
     
-    private let dependencies: {{ prefix }}{{ module_info.name }}Dependencies?
+    private let dependencies: {{ prefix }}{{ module_info.name }}Dependencies
     
-    init(dependencies: {{ prefix }}{{ module_info.name }}Dependencies?) {
+    init(dependencies: {{ prefix }}{{ module_info.name }}Dependencies) {
         self.dependencies = dependencies
     }
 }

@@ -1,11 +1,11 @@
 # Template information section
 name: "rsb_service"
-summary: "Create simple service and implementation"
+summary: "Create simple service and implementation."
 author: "Anton Kovalev"
 version: "1.2"
 license: "MIT"
 
-# Use custom parameter inherit If you want to inherit your service. 
+# Use custom parameter inherit if you want to inherit your service. 
 
 # The declarations for code files
 code_files:

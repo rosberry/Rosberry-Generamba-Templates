@@ -2,7 +2,7 @@
 name: "rsb_viper_controller_table_sub"
 summary: "VIPER module template with UIViewController playing as a View. If ViewController with tableView and you use RSBTableViewManager this is right choice."
 author: "Anton Kovalev"
-version: "1.2"
+version: "1.0.2"
 license: "MIT"
 
 # The declarations for code files

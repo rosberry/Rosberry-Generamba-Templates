@@ -1,8 +1,8 @@
 # Template information section
-name: "rsb_swift_module"
-summary: "Base VIPER+MVVM template for presentation module in Swift project with simple DI logic."
+name: "rsb_swift_viper_module"
+summary: "Base VIPER+VM template for presentation module in Swift project with simple DI logic. Requires `TransitionHandler` protocol for navigation."
 author: "Artem Novichkov"
-version: "0.1.0"
+version: "1.0.0"
 license: "MIT"
 
 # The declarations for code files

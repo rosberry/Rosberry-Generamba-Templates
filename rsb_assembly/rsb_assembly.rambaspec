@@ -1,8 +1,8 @@
 # Template information section
 name: "rsb_assembly"
-summary: "Create Assembly with tests"
+summary: "Create an assembly with tests."
 author: "Anton Kovalev"
-version: "1.0"
+version: "1.0.0"
 license: "MIT" 
 
 # The declarations for code files

@@ -1,6 +1,6 @@
 # Template information section
 name: rsb_viper_controller_collection_sub
-summary: Submodule for working with collection
+summary: "Submodule for working with collection."
 author: Anton Kormakov
 version: 1.0.0
 license: MIT

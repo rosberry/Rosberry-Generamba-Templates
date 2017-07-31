@@ -1,0 +1,9 @@
+name: "rsb_service_swift"
+summary: "Service"
+author: "Evgeny Mikhaylov"
+version: "1.0.0"
+license: "MIT"
+
+code_files:
+- {name: Protocol.swift, path: Code/service_protocol.swift.liquid}
+- {name: .swift, path: Code/service.swift.liquid}

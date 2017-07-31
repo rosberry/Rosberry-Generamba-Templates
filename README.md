@@ -31,7 +31,7 @@ templates:
 - `rsb_swift_viper_di_module`. Base VIPER template for presentation module in Swift project with protocol composition and generics for DI in Interactors. 1.0.0
 
 - `rsb_swift_cell_submodule`. Template for `UITableViewCell` with ViewModel and CellItem classes. 1.0.0
-- `rsb_swift_service`. Template for creating services. Check gist: (https://gist.github.com/artemnovichkov/ac281217059300c4a2bdd071b73c3723). 1.0.1
+- `rsb_swift_service`. Template for creating services. Check [gist](https://gist.github.com/artemnovichkov/ac281217059300c4a2bdd071b73c3723). 1.0.1
 
 #### Objective-C:
 

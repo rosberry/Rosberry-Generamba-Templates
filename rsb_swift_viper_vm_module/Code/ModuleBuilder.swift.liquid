@@ -2,12 +2,12 @@
 
 enum {{ prefix }}{{ module_info.name }}ModuleBuilder {
     
-    static func module(dependencies: {{ prefix }}{{ module_info.name }}Dependencies? = nil) -> {{ prefix }}{{ module_info.name }}ViewController {
+    static func module() -> {{ prefix }}{{ module_info.name }}ViewController {
         let router = {{ prefix }}{{ module_info.name }}Router()
-        let interactor = {{ prefix }}{{ module_info.name }}Interactor(dependencies: dependencies)
+        let interactor = {{ prefix }}{{ module_info.name }}Interactor()
         let viewModel = {{ prefix }}{{ module_info.name }}ViewModel(router: router, interactor: interactor)
         let viewController = {{ prefix }}{{ module_info.name }}ViewController(viewModel: viewModel)
-        router.transitionHandler = viewController
+        router.viewController = viewController
         
         return viewController
     }

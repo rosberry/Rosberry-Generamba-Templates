@@ -27,6 +27,7 @@ templates:
 - `rsb_swift_viper_module`. Base VIPER+VM template for presentation module in Swift project with simple DI logic. Requires `TransitionHandler` protocol for navigation. 1.0.0
 - `rsb_swift_viper_di_module`. Base VIPER+VM template for presentation module in Swift project with protocol composition and generics for DI in Interactors. Requires `TransitionHandler` protocol for navigation. 1.0.3
 - `rsb_swift_cell_submodule`. Template for `UITableViewCell` with ViewModel and CellItem classes. 1.0.0
+- `rsb_service_swift`. Template for creating services. Check gist: (https://gist.github.com/artemnovichkov/ac281217059300c4a2bdd071b73c3723). 1.0.0
 
 #### Objective-C:
 
@@ -43,6 +44,7 @@ templates:
 
 | Name                                          | Description                                                                                                                                                                         | Version |
 |-----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| rsb_service_swift                             | Template for creating swift services. Check gist: (https://gist.github.com/artemnovichkov/ac281217059300c4a2bdd071b73c3723) | 1.0.0 |
 | rsb_swift_viper_module                        | Base VIPER+VM template for presentation module in Swift project with simple DI logic. Requires `TransitionHandler` protocol for navigation.                                         | 1.0.0   |
 | rsb_swift_viper_di_module                     | Base VIPER+VM template for presentation module in Swift project with protocol composition and generics for DI in Interactors. Requires `TransitionHandler` protocol for navigation. | 1.0.3   |
 | rsb_swift_cell_submodule                      | Template for `UITableViewCell` with ViewModel and CellItem classes.                                                                                                                 | 1.0.0   |

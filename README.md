@@ -6,7 +6,7 @@ This is the collection of templates for [`Generamba`](https://github.com/rambler
 - [Template List](#template-list)
 
 ## Installation
-1) Setup [`Generamba`](https://github.com/rambler-ios/Generamba) and run `generamba setup` and fill out `Rambafile`
+1) Setup [`Generamba`](https://github.com/rambler-digital-solutions/Generamba) and run `generamba setup` and fill out `Rambafile`
 
 2) Updates templates section in your `Rambafile` as follow:
 ```

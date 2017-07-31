@@ -1,7 +1,7 @@
-name: "rsb_service_swift"
+name: "rsb_swift_service"
 summary: "Service"
 author: "Evgeny Mikhaylov"
-version: "1.0.0"
+version: "1.0.1"
 license: "MIT"
 
 code_files:

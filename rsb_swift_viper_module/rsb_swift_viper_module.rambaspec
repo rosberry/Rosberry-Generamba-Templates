@@ -1,8 +1,8 @@
 # Template information section
-name: "rsb_viper_module"
+name: "rsb_swift_viper_module"
 summary: "Base VIPER template for presentation module in Swift project with simple DI logic."
 author: "Anton Kovalev"
-version: "1.0.0"
+version: "1.0.1"
 license: "MIT"
 
 # The declarations for code files

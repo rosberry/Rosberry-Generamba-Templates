@@ -1,6 +1,6 @@
 # Template information section
 name: "rsb_mvvm_module_table"
-summary: "MVVM module template with UIViewController playing as a View. If ViewController has table view and you use RSBTableViewManager this is right choice."
+summary: "MVVM module template with UIViewController playing as a View. If ViewController has table view and you use RSBTableViewManager it is a right choice."
 author: "Anton Kovalev"
 version: "1.0.1"
 license: "MIT"

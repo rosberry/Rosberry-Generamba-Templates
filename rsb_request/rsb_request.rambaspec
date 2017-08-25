@@ -1,6 +1,6 @@
 # Template information section
 name: "rsb_request"
-summary: "Create request based on RSBRequest. Custom parameters: parameters, path_components, headers"
+summary: "A request based on RSBRequest. Custom parameters: parameters, path_components, headers"
 author: "Anton Kovalev"
 version: "1.0.0"
 license: "MIT"

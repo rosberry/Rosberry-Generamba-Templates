@@ -46,6 +46,12 @@ templates:
 - [rsb_mvvm_module_table](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_mvvm_module_table/rsb_mvvm_module_table.rambaspec)
 - [rsb_request](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_request/rsb_request.rambaspec)
 
+## About
+
+This project is owned and maintained by Rosberry. We build mobile apps for users worldwide 🌏
+
+Check out our [open source projects](https://github.com/rosberry) or give us a high-five on 🐦 [@rosberryapps](http://twitter.com/RosberryApps)
+
 ## License
 
 Rosberry Generamba Templates is available under the MIT license. See the LICENSE file for more info.

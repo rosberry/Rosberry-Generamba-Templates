@@ -15,7 +15,7 @@ It is a collection of templates for [Generamba](https://github.com/rambler-digit
 ```
 ### Templates
 catalogs:
-- 'https://github.com/rosberry/rosberry-Generamba-Templates'
+- 'https://github.com/rosberry/rosberry-generamba-templates'
 templates:
 - {name: rsb_swift_viper_module}
 ```
@@ -45,3 +45,7 @@ templates:
 - [rsb_viper_vm_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_viper_vm_module/rsb_viper_vm_module.rambaspec)
 - [rsb_mvvm_module_table](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_mvvm_module_table/rsb_mvvm_module_table.rambaspec)
 - [rsb_request](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_request/rsb_request.rambaspec)
+
+## License
+
+Rosberry Generamba Templates is available under the MIT license. See the LICENSE file for more info.

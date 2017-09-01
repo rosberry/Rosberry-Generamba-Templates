@@ -1,8 +1,8 @@
 # Template information section
-name: "rsb_viper_view"
-summary: "VIPER module template with UIView playing as a View."
+name: "rsb_objc_viper_controller"
+summary: "VIPER module template with UIViewController playing as a View."
 author: "Anton Kovalev"
-version: "1.0.0"
+version: "1.1.4"
 license: "MIT"
 
 # The declarations for code files
@@ -14,8 +14,8 @@ code_files:
 # View layer
 - {name: View/ViewInput.h, path: Code/View/view_input.h.liquid}
 - {name: View/ViewOutput.h, path: Code/View/view_output.h.liquid}
-- {name: View/View.h, path: Code/View/view.h.liquid}
-- {name: View/View.m, path: Code/View/view.m.liquid}
+- {name: View/ViewController.h, path: Code/View/viewcontroller.h.liquid}
+- {name: View/ViewController.m, path: Code/View/viewcontroller.m.liquid}
 
 # Presenter layer
 - {name: Presenter/ModuleInput.h, path: Code/Presenter/module_input.h.liquid}
@@ -40,7 +40,7 @@ test_files:
 - {name: Assembly/Assembly_Testable.h, path: Tests/Assembly/assembly_testable.h.liquid}
 
 # View tests
-- {name: View/ViewTests.m, path: Tests/View/view_tests.m.liquid}
+- {name: View/ViewControllerTests.m, path: Tests/View/view_tests.m.liquid}
 
 # Presenter tests
 - {name: Presenter/PresenterTests.m, path: Tests/Presenter/presenter_tests.m.liquid}
@@ -56,3 +56,4 @@ dependencies:
 - Typhoon
 - OCMock
 - RamblerTyphoonUtils
+- ViperMcFlurry

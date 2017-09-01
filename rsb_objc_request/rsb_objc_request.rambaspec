@@ -1,5 +1,5 @@
 # Template information section
-name: "rsb_request"
+name: "rsb_objc_request"
 summary: "A request based on RSBRequest. Custom parameters: parameters, path_components, headers"
 author: "Anton Kovalev"
 version: "1.0.0"

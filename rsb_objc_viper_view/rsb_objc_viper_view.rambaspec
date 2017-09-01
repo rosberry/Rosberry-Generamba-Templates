@@ -1,11 +1,9 @@
 # Template information section
-name: "rsb_viper_vm_module"
-summary: "MVVM module template with UIViewController playing as a View."
+name: "rsb_objc_viper_view"
+summary: "VIPER module template with UIView playing as a View."
 author: "Anton Kovalev"
-version: "1.0.1"
+version: "1.0.0"
 license: "MIT"
-
-# Use custom parameter inherit if you want to inherit your module. 
 
 # The declarations for code files
 code_files:
@@ -14,17 +12,19 @@ code_files:
 - {name: Assembly/Assembly.m, path: Code/Assembly/assembly.m.liquid}
 
 # View layer
+- {name: View/ViewInput.h, path: Code/View/view_input.h.liquid}
 - {name: View/ViewOutput.h, path: Code/View/view_output.h.liquid}
-- {name: View/ViewController.h, path: Code/View/viewcontroller.h.liquid}
-- {name: View/ViewController.m, path: Code/View/viewcontroller.m.liquid}
+- {name: View/View.h, path: Code/View/view.h.liquid}
+- {name: View/View.m, path: Code/View/view.m.liquid}
 
-# ViewModel layer
-- {name: ViewModel/ModuleInput.h, path: Code/ViewModel/module_input.h.liquid}
-- {name: ViewModel/ViewModel.h, path: Code/ViewModel/viewmodel.h.liquid}
-- {name: ViewModel/ViewModel.m, path: Code/ViewModel/viewmodel.m.liquid}
+# Presenter layer
+- {name: Presenter/ModuleInput.h, path: Code/Presenter/module_input.h.liquid}
+- {name: Presenter/Presenter.h, path: Code/Presenter/presenter.h.liquid}
+- {name: Presenter/Presenter.m, path: Code/Presenter/presenter.m.liquid}
 
 # Interactor layer
 - {name: Interactor/InteractorInput.h, path: Code/Interactor/interactor_input.h.liquid}
+- {name: Interactor/InteractorOutput.h, path: Code/Interactor/interactor_output.h.liquid}
 - {name: Interactor/Interactor.h, path: Code/Interactor/interactor.h.liquid}
 - {name: Interactor/Interactor.m, path: Code/Interactor/interactor.m.liquid}
 
@@ -40,10 +40,10 @@ test_files:
 - {name: Assembly/Assembly_Testable.h, path: Tests/Assembly/assembly_testable.h.liquid}
 
 # View tests
-- {name: View/ViewControllerTests.m, path: Tests/View/view_tests.m.liquid}
+- {name: View/ViewTests.m, path: Tests/View/view_tests.m.liquid}
 
-# ViewModel tests
-- {name: ViewModel/ViewModelTests.m, path: Tests/ViewModel/viewmodel_tests.m.liquid}
+# Presenter tests
+- {name: Presenter/PresenterTests.m, path: Tests/Presenter/presenter_tests.m.liquid}
 
 # Interactor tests
 - {name: Interactor/InteractorTests.m, path: Tests/Interactor/interactor_tests.m.liquid}

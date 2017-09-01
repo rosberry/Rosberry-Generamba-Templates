@@ -1,5 +1,5 @@
 # Template information section
-name: "rsb_assembly"
+name: "rsb_objc_assembly"
 summary: "Assembly with tests."
 author: "Anton Kovalev"
 version: "1.0.0"

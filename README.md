@@ -39,7 +39,7 @@ templates:
 - [rsb_objc_viper_controller_collection_sub](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_controller_collection_sub/rsb_objc_viper_controller_collection_sub.rambaspec)
 - [rsb_objc_viper_controller_table](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_controller_table/rsb_objc_viper_controller_table.rambaspec)
 - [rsb_objc_viper_controller_table_sub](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_controller_table_sub/rsb_objc_viper_controller_table_sub.rambaspec)
-- [rsb_objc_viper_controller_table_sub_collection_sub](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_vobjc_iper_controller_table_sub_collection_sub/rsb_objc_viper_controller_table_sub_collection_sub.rambaspec)
+- [rsb_objc_viper_controller_table_sub_collection_sub](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_controller_table_sub_collection_sub/rsb_objc_viper_controller_table_sub_collection_sub.rambaspec)
 - [rsb_objc_viper_view](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_view/rsb_objc_viper_view.rambaspec)
 - [rsb_objc_assembly](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_assembly/rsb_objc_assembly.rambaspec)
 - [rsb_objc_viper_vm_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_vm_module/rsb_objc_viper_vm_module.rambaspec)

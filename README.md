@@ -27,6 +27,7 @@ templates:
 ### Template List
 
 #### Swift:
+- [rsb_swift_mvvm_di_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_mvvm_di_module/rsb_swift_mvvm_di_module.rambaspec)
 - [rsb_swift_viper_vm_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_viper_vm_module/rsb_swift_viper_vm_module.rambaspec)
 - [rsb_swift_viper_vm_di_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_viper_vm_di_module/rsb_swift_viper_vm_di_module.rambaspec)
 - [rsb_swift_viper_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_viper_module/rsb_swift_viper_module.rambaspec)

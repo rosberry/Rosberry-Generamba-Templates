@@ -9,4 +9,4 @@ license: "MIT"
 code_files:
 - {name: TableViewCell.swift, path: Code/TableViewCell.swift.liquid}
 - {name: TableViewCellItem.swift, path: Code/TableViewCellItem.swift.liquid}
-- {name: TableViewModel.swift, path: Code/TableViewModel.swift.liquid}
+- {name: TableViewCellModel.swift, path: Code/TableViewCellModel.swift.liquid}

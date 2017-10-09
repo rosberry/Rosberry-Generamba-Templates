@@ -5,11 +5,11 @@ import TableViewTools
 
 final class {{ prefix }}{{ module_info.name }}TableViewCellItem: TableViewCellItemProtocol {
     
-    private let viewModel: {{ prefix }}{{ module_info.name }}TableViewModel
+    private let viewModel: {{ prefix }}{{ module_info.name }}TableViewCellModel
     
     var reuseType = ReuseType(cellClass: {{ prefix }}{{ module_info.name }}TableViewCell.self)
     
-    init(viewModel: {{ prefix }}{{ module_info.name }}TableViewModel) {
+    init(viewModel: {{ prefix }}{{ module_info.name }}TableViewCellModel) {
         self.viewModel = viewModel
     }
     

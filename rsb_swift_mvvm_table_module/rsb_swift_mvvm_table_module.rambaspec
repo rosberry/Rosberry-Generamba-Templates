@@ -1,0 +1,13 @@
+# Template information section
+name: "rsb_swift_mvvm_table_module"
+summary: "A template for presentation module with view model and router. Contains a table view configured via TableViewTools."
+author: "Artem Novichkov"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: Module.swift, path: Code/Module.swift.liquid}
+- {name: ViewController.swift, path: Code/ViewController.swift.liquid}
+- {name: ViewModel.swift, path: Code/ViewModel.swift.liquid}
+- {name: Router.swift, path: Code/Router.swift.liquid}

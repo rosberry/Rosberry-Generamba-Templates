@@ -1,10 +1,8 @@
-//
-//  Copyright © 2017 Rosberry. All rights reserved.
-//
+{% include 'header' %}
 
 import TableViewTools
 
-final class {{ module_info.name }}GalleryFactory {
+final class {{ module_info.name }}Factory {
 
     static func makeSectionItems(cellModels: [{{ module_info.name }}TableViewCellModel]) -> [TableViewSectionItem] {
         let cellItems = cellModels.map({{ module_info.name }}TableViewCellItem.init)

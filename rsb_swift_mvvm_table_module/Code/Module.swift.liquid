@@ -1,17 +1,17 @@
 {% include 'header' %}
 
-protocol {{ prefix }}{{ module_info.name }}ModuleInput: class {
+protocol {{ module_info.name }}ModuleInput: class {
 }
 
-protocol {{ prefix }}{{ module_info.name }}ModuleOutput: class {
+protocol {{ module_info.name }}ModuleOutput: class {
 }
 
-final class {{ prefix }}{{ module_info.name }}Module {
+final class {{ module_info.name }}Module {
 
-    var input: {{ prefix }}{{ module_info.name }}ModuleInput {
+    var input: {{ module_info.name }}ModuleInput {
         return viewModel
     }
-    var output: {{ prefix }}{{ module_info.name }}ModuleOutput? {
+    var output: {{ module_info.name }}ModuleOutput? {
         set {
             viewModel.output = newValue
         }
@@ -19,15 +19,15 @@ final class {{ prefix }}{{ module_info.name }}Module {
             return viewModel.output
         }
     }
-    let viewController: {{ prefix }}{{ module_info.name }}ViewController
+    let viewController: {{ module_info.name }}ViewController
 
-    private let viewModel: {{ prefix }}{{ module_info.name }}ViewModel
+    private let viewModel: {{ module_info.name }}ViewModel
 
     init() {
         let dependencies = [Any]()
-        let router = {{ prefix }}{{ module_info.name }}Router()
-        viewModel = {{ prefix }}{{ module_info.name }}ViewModel(dependencies: dependencies, router: router)
-        viewController = {{ prefix }}{{ module_info.name }}ViewController(viewModel: viewModel)
+        let router = {{ module_info.name }}Router()
+        viewModel = {{ module_info.name }}ViewModel(dependencies: dependencies, router: router)
+        viewController = {{ module_info.name }}ViewController(viewModel: viewModel)
         viewModel.delegate = viewController
         router.set(viewController: viewController, viewModel: viewModel)
     }

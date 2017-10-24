@@ -3,9 +3,9 @@
 import UIKit
 import TableViewTools
 
-final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
+final class {{ module_info.name }}ViewController: UIViewController {
 
-    private let viewModel: {{ prefix }}{{ module_info.name }}ViewModel
+    private let viewModel: {{ module_info.name }}ViewModel
 
     private lazy var tableViewManager: TableViewManager = {
         return TableViewManager(tableView: self.tableView)
@@ -21,7 +21,7 @@ final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
 
     // MARK: - Lifecycle
 
-    init(viewModel: {{ prefix }}{{ module_info.name }}ViewModel) {
+    init(viewModel: {{ module_info.name }}ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -44,9 +44,9 @@ final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
     }
 }
 
-// MARK: - {{ prefix }}{{ module_info.name }}ViewModelDelegate
+// MARK: - {{ module_info.name }}ViewModelDelegate
 
-extension {{ prefix }}{{ module_info.name }}ViewController: {{ prefix }}{{ module_info.name }}ViewModelDelegate {
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewModelDelegate {
 
     func update(animated: Bool) {
     }

@@ -9,7 +9,7 @@ It is a collection of templates for [Generamba](https://github.com/rambler-digit
 
 ## Installation
 1. Install [Generamba](https://github.com/rambler-digital-solutions/Generamba#installation)
-2. Run `generamba setup` and fill out `Rambafile`
+2. Run `generamba setup` and fill out `Rambafile`. Template of `Rambafile` is [here](Rambafile)
 3. Update templates section in your `Rambafile` as follow:
 
 ```

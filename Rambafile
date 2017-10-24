@@ -1,0 +1,30 @@
+### Headers settings
+company: Rosberry
+
+### Xcode project settings
+project_name: Project
+xcodeproj_path: Project.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Project
+
+# The file path for new modules
+project_file_path: Classes/
+
+# The xcodeproje group path to new modules
+project_group_path: Classes/
+
+### Dependencies settings section
+
+cartfile_path: Cartfile
+
+### Templates
+catalogs:
+- 'https://github.com/rosberry/rosberry-generamba-templates'
+templates:
+- {name: rsb_swift_viper_vm_di_module}
+- {name: rsb_swift_service}
+- {name: rsb_swift_cell_submodule}
+
+

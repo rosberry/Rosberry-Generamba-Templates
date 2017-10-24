@@ -5,9 +5,9 @@ It is a collection of templates for [Generamba](https://github.com/rambler-digit
 ## Table of contents
 
 - [Installation](#installation)
-- [Template List](#template-list)
+- [Templates List](#templates-list)
 
-### Installation
+## Installation
 1. Install [Generamba](https://github.com/rambler-digital-solutions/Generamba#installation)
 2. Run `generamba setup` and fill out `Rambafile`
 3. Update templates section in your `Rambafile` as follow:
@@ -24,9 +24,9 @@ templates:
 
 5. Enjoy
 
-### Template List
+## Templates List
 
-#### Swift:
+### Swift:
 - [rsb_swift_mvvm_di_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_mvvm_di_module/rsb_swift_mvvm_di_module.rambaspec)
 - [rsb_swift_viper_vm_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_viper_vm_module/rsb_swift_viper_vm_module.rambaspec)
 - [rsb_swift_viper_vm_di_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_viper_vm_di_module/rsb_swift_viper_vm_di_module.rambaspec)
@@ -34,8 +34,9 @@ templates:
 - [rsb_swift_viper_di_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_viper_di_module/rsb_swift_viper_di_module.rambaspec)
 - [rsb_swift_cell_submodule](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_cell_submodule/rsb_swift_cell_submodule.rambaspec)
 - [rsb_swift_service](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_service/rsb_swift_service.rambaspec)
+- [rsb_swift_mvvm_table_module](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_swift_mvvm_table_module/rsb_swift_mvvm_table_module.rambaspec)
 
-#### Objective-C:
+### Objective-C:
 - [rsb_objc_viper_controller](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_controller/rsb_objc_viper_controller.rambaspec)
 - [rsb_objc_viper_controller_collection_sub](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_controller_collection_sub/rsb_objc_viper_controller_collection_sub.rambaspec)
 - [rsb_objc_viper_controller_table](https://github.com/rosberry/Rosberry-Generamba-Templates/blob/master/rsb_objc_viper_controller_table/rsb_objc_viper_controller_table.rambaspec)

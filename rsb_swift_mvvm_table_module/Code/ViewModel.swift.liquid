@@ -1,0 +1,35 @@
+{% include 'header' %}
+
+protocol {{ module_info.name }}ViewModelDelegate: class {
+
+    func update(animated: Bool)
+}
+
+final class {{ module_info.name }}ViewModel {
+
+    typealias Dependencies = Any
+
+    weak var delegate: {{ module_info.name }}ViewModelDelegate?
+    weak var output: {{ module_info.name }}ModuleOutput?
+
+    private let dependencies: Dependencies    
+    private let router: {{ module_info.name }}Router
+
+    private(set) var viewModels = [{{ module_info.name }}TableViewCellModel]()
+
+    init(dependencies: Dependencies, router: {{ module_info.name }}Router) {
+        self.dependencies = dependencies
+        self.router = router
+    }
+
+    // MARK: - Events
+
+    func viewDidLoad() {
+        delegate?.update(animated: false)
+    }
+}
+
+// MARK: - {{ module_info.name }}Input
+
+extension {{ module_info.name }}ViewModel: {{ module_info.name }}ModuleInput {
+}

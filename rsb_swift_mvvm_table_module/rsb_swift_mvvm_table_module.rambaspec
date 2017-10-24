@@ -11,3 +11,7 @@ code_files:
 - {name: ViewController.swift, path: Code/ViewController.swift.liquid}
 - {name: ViewModel.swift, path: Code/ViewModel.swift.liquid}
 - {name: Router.swift, path: Code/Router.swift.liquid}
+
+- {name:TableViewCell.swift, path: Code/Submodules/TableViewCell.swift.liquid}
+- {name:TableViewCellItem.swift, path: Code/Submodules/TableViewCellItem.swift.liquid}
+- {name:TableViewCellModel.swift, path: Code/Submodules/TableViewCellModel.swift.liquid}

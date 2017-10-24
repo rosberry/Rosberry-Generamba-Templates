@@ -29,6 +29,6 @@ final class {{ module_info.name }}Module {
         viewModel = {{ module_info.name }}ViewModel(dependencies: dependencies, router: router)
         viewController = {{ module_info.name }}ViewController(viewModel: viewModel)
         viewModel.delegate = viewController
-        router.set(viewController: viewController, viewModel: viewModel)
+        router.viewController = viewController
     }
 }

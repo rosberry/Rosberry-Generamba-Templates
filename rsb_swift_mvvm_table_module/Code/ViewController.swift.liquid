@@ -49,6 +49,6 @@ final class {{ module_info.name }}ViewController: UIViewController {
 extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewModelDelegate {
 
     func update(animated: Bool) {
-        tableViewManager.sectionItems = {{ module_info.name }}GalleryFactory.makeSectionItems(cellModels: viewModel.viewModels)
+        tableViewManager.sectionItems = {{ module_info.name }}Factory.makeSectionItems(cellModels: viewModel.viewModels)
     }
 }

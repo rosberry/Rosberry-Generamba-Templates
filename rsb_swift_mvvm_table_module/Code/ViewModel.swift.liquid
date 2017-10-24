@@ -15,6 +15,8 @@ final class {{ module_info.name }}ViewModel {
     private let dependencies: Dependencies    
     private let router: {{ module_info.name }}Router
 
+    private(set) var viewModels = [{{ module_info.name }}TableViewCellModel]()
+
     init(dependencies: Dependencies, router: {{ module_info.name }}Router) {
         self.dependencies = dependencies
         self.router = router

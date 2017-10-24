@@ -1,14 +1,6 @@
 {% include 'header' %}
 
-import Foundation
-
-final class {{ module_info.name }}Router {
-
-    private weak var viewController: {{ module_info.name }}ViewController?
-    private weak var viewModel: {{ module_info.name }}ViewModel?
-
-    func set(viewController: {{ module_info.name }}ViewController, viewModel: {{ module_info.name }}ViewModel) {
-        self.viewController = viewController
-        self.viewModel = viewModel
-    }
+final class {{ prefix }}{{ module_info.name }}Router {
+    
+    weak var viewController: {{ prefix }}{{ module_info.name }}ViewController?
 }

@@ -1,10 +1,25 @@
 {% include 'header' %}
 
 import UIKit
+import TableViewTools
 
 final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
 
     private let viewModel: {{ prefix }}{{ module_info.name }}ViewModel
+
+    private lazy var tableViewManager: TableViewManager = {
+        return TableViewManager(tableView: self.tableView)
+    }()
+
+    // MARK: - Subviews
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.tableFooterView = UIView()
+        return tableView
+    }()
+
+    // MARK: - Lifecycle
 
     init(viewModel: {{ prefix }}{{ module_info.name }}ViewModel) {
         self.viewModel = viewModel
@@ -15,10 +30,9 @@ final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(tableView)
         viewModel.viewDidLoad()
     }
 
@@ -26,6 +40,7 @@ final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
     }
 }
 

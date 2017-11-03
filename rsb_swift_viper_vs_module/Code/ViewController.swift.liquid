@@ -1,0 +1,15 @@
+{% include 'header' %}
+
+import UIKit
+
+final class {{ prefix }}{{ module_info.name }}ViewController: UIViewController {
+    
+    private let presenter: {{ prefix }}{{ module_info.name }}Presenter
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewReadyEventTriggered()
+    }
+}

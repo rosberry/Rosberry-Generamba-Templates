@@ -1,7 +1,7 @@
 # Template information section
 name: "rsb_swift_viper_vs_module"
 summary: "Base VIPER template for presentation module in Swift project with view states, protocol composition and generics for DI is presenters.”
-author: “Dmitry Frishbuter”
+author: "Dmitry Frishbuter"
 version: "1.0.0"
 license: "MIT"
 

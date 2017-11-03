@@ -4,13 +4,13 @@ final class {{ prefix }}{{ module_info.name }}Presenter: StatefulPresenter<{{ pr
 
     typealias Dependencies = Any
 
-    private let dependencies = Dependencies
+    private let dependencies: Dependencies
 
     weak var output: {{ prefix }}{{ module_info.name }}ModuleOutput?
     
 	// MARK: - Lifecycle
 
-    init(dependencies: Dependencies, initialState: { prefix }}{{ module_info.name }}ViewState) {
+    init(dependencies: Dependencies, initialState: {{ prefix }}{{ module_info.name }}ViewState) {
         self.dependencies = dependencies
         super.init(initialState: initialState)
     }

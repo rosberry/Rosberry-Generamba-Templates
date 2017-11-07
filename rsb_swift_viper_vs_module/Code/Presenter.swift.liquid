@@ -1,16 +1,16 @@
 {% include 'header' %}
 
+typealias {{ prefix }}{{ module_info.name }}Dependencies = Any
+
 final class {{ prefix }}{{ module_info.name }}Presenter: StatefulPresenter<{{ prefix }}{{ module_info.name }}ViewState>, {{ prefix }}{{ module_info.name }}ModuleInput {
 
-    typealias Dependencies = Any
-
-    private let dependencies: Dependencies
+    private let dependencies: {{ prefix }}{{ module_info.name }}Dependencies
 
     weak var output: {{ prefix }}{{ module_info.name }}ModuleOutput?
     
 	// MARK: - Lifecycle
 
-    init(dependencies: Dependencies, initialState: {{ prefix }}{{ module_info.name }}ViewState) {
+    init(dependencies: {{ prefix }}{{ module_info.name }}Dependencies, initialState: {{ prefix }}{{ module_info.name }}ViewState) {
         self.dependencies = dependencies
         super.init(initialState: initialState)
     }

@@ -2,7 +2,7 @@
 
 typealias {{ prefix }}{{ module_info.name }}Dependencies = Any
 
-final class {{ prefix }}{{ module_info.name }}Presenter: StatefulPresenter<{{ prefix }}{{ module_info.name }}ViewState>, {{ prefix }}{{ module_info.name }}ModuleInput {
+final class {{ prefix }}{{ module_info.name }}Presenter: StatefulPresenter<{{ prefix }}{{ module_info.name }}ViewState, {{ prefix }}{{ module_info.name }}StateStore>, {{ prefix }}{{ module_info.name }}ModuleInput {
 
     private let dependencies: {{ prefix }}{{ module_info.name }}Dependencies
 
@@ -10,12 +10,18 @@ final class {{ prefix }}{{ module_info.name }}Presenter: StatefulPresenter<{{ pr
     
 	// MARK: - Lifecycle
 
-    init(dependencies: {{ prefix }}{{ module_info.name }}Dependencies, initialState: {{ prefix }}{{ module_info.name }}ViewState) {
+    init(dependencies: {{ prefix }}{{ module_info.name }}Dependencies, stateStore: {{ prefix }}{{ module_info.name }}StateStore) {
         self.dependencies = dependencies
-        super.init(initialState: initialState)
+        super.init(stateStore: stateStore)
     }
 
     override func viewReadyEventTriggered() {
         
     }
+}
+
+// MARK: - {{ prefix }}{{ module_info.name }}ModuleInput
+
+extension {{ prefix }}{{ module_info.name }}Presenter: {{ prefix }}{{ module_info.name }}ModuleInput {
+	
 }

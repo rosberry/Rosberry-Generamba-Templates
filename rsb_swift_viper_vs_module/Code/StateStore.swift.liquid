@@ -6,7 +6,6 @@ enum {{ prefix }}{{ module_info.name }}ViewState: ViewState {
 
 final class {{ prefix }}{{ module_info.name }}StateStore: StateStore<{{ prefix }}{{ module_info.name }}ViewState> {
 
-
     private var _state: {{ prefix }}{{ module_info.name }}ViewState = .idle
     override var state: {{ prefix }}{{ module_info.name }}ViewState {
         get {

@@ -10,4 +10,4 @@ code_files:
 - {name: Module.swift, path: Code/Module.swift.liquid}
 - {name: ViewController.swift, path: Code/ViewController.swift.liquid}
 - {name: Presenter.swift, path: Code/Presenter.swift.liquid}
-- {name: ViewState.swift, path: Code/ViewState.swift.liquid}
+- {name: StateStore.swift, path: Code/StateStore.swift.liquid}

@@ -2,7 +2,7 @@
 
 typealias {{ prefix }}{{ module_info.name }}Dependencies = Any
 
-final class {{ prefix }}{{ module_info.name }}Presenter: StatefulPresenter<{{ prefix }}{{ module_info.name }}ViewState, {{ prefix }}{{ module_info.name }}StateStore>, {{ prefix }}{{ module_info.name }}ModuleInput {
+final class {{ prefix }}{{ module_info.name }}Presenter: StatefulPresenter<{{ prefix }}{{ module_info.name }}ViewState, {{ prefix }}{{ module_info.name }}StateStore> {
 
     private let dependencies: {{ prefix }}{{ module_info.name }}Dependencies
 

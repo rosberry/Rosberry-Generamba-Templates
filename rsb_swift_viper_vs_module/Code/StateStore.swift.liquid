@@ -16,6 +16,7 @@ final class {{ prefix }}{{ module_info.name }}StateStore: StateStore<{{ prefix }
                 assertionFailure("Skip rendering with the same state: \(newState.logDescription)")
                 return
             }
+            _state = newState
             // Set stored properties here accoring to state associated values
             delegate?.stateDidChange()
         }

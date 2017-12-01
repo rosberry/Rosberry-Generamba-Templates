@@ -1,0 +1,12 @@
+# Template information section
+name: "rsb_swift_collection_cell_submodule"
+summary: "Template for UICollectionViewCell with ViewModel and CellItem classes."
+author: "Nikita Ermolenko"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: CollectionViewCell.swift, path: Code/CollectionViewCell.swift.liquid}
+- {name: CollectionViewCellItem.swift, path: Code/CollectionViewCellItem.swift.liquid}
+- {name: CollectionViewCellModel.swift, path: Code/CollectionViewCellModel.swift.liquid}

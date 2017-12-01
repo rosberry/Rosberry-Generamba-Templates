@@ -1,0 +1,24 @@
+{% include 'header' %}
+
+import UIKit
+import CollectionViewTools
+
+final class {{ prefix }}{{ module_info.name }}CollectionViewCellItem: CollectionViewCellItemProtocol {
+    
+    private let viewModel: {{ prefix }}{{ module_info.name }}CollectionViewCellModel
+    
+    var reuseType = ReuseType(cellClass: {{ prefix }}{{ module_info.name }}CollectionViewCell.self)
+    
+    init(viewModel: {{ prefix }}{{ module_info.name }}CollectionViewCellModel) {
+        self.viewModel = viewModel
+    }
+    
+    func size(for collectionView: UICollectionView, with layout: UICollectionViewLayout, at indexPath: IndexPath) -> CGSize {
+        return .zero
+    }
+    
+    func cell(for collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: {{ prefix }}{{ module_info.name }}CollectionViewCell = collectionView.dequeueReusableCell()
+        return cell
+    }
+}

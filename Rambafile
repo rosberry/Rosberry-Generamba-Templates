@@ -25,6 +25,6 @@ catalogs:
 templates:
 - {name: rsb_swift_viper_vm_di_module}
 - {name: rsb_swift_service}
-- {name: rsb_swift_cell_submodule}
+- {name: rsb_swift_table_cell_submodule}
 
 

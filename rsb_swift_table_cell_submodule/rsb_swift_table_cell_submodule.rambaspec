@@ -1,8 +1,8 @@
 # Template information section
-name: "rsb_swift_cell_submodule"
+name: "rsb_swift_table_cell_submodule"
 summary: "Template for UITableViewCell with ViewModel and CellItem classes."
 author: "Artem Novichkov"
-version: "1.0.0"
+version: "1.0.1"
 license: "MIT"
 
 # The declarations for code files

@@ -29,7 +29,8 @@ templates:
 - [rsb_swift_viper_module](rsb_swift_viper_module/rsb_swift_viper_module.rambaspec)
 - [rsb_swift_viper_di_module](rsb_swift_viper_di_module/rsb_swift_viper_di_module.rambaspec)
 - [rsb_swift_viper_vs_module](rsb_swift_viper_vs_module/rsb_swift_viper_vs_module.rambaspec)
-- [rsb_swift_cell_submodule](rsb_swift_cell_submodule/rsb_swift_cell_submodule.rambaspec)
+- [rsb_swift_table_cell_submodule](rsb_swift_table_cell_submodule/rsb_swift_table_cell_submodule.rambaspec)
+- [rsb_swift_collection_cell_submodule](rsb_swift_collection_cell_submodule/rsb_swift_collection_cell_submodule.rambaspec)
 - [rsb_swift_service](rsb_swift_service/rsb_swift_service.rambaspec)
 - [rsb_swift_mvvm_table_module](rsb_swift_mvvm_table_module/rsb_swift_mvvm_table_module.rambaspec)
 

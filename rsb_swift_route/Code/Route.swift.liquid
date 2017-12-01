@@ -1,0 +1,24 @@
+
+{% include 'header' %}
+
+protocol {{ module_info.name }}Route {
+	var {{ module_info.name | downcase }}Transition: Transition { get }
+
+    @discardableResult
+    func open{{ module_info.name }}Route() -> {{ module_info.name }}Module
+}
+
+extension {{ module_info.name }}Route where Self: RouterProtocol {
+	
+	var {{ module_info.name | downcase }}Transition: Transition {
+        return ModalTransition()
+    }
+
+    func open{{ module_info.name }}Route() -> {{ module_info.name }}Module {
+        let module = {{ module_info.name }}Module()
+        let transition = {{ module_info.name | downcase }}Transition
+        module.router.openTransition = transition
+        open(module.viewController, transition: transition)
+        return module
+    }
+}

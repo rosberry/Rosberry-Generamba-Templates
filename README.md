@@ -33,6 +33,7 @@ templates:
 - [rsb_swift_collection_cell_submodule](rsb_swift_collection_cell_submodule/rsb_swift_collection_cell_submodule.rambaspec)
 - [rsb_swift_service](rsb_swift_service/rsb_swift_service.rambaspec)
 - [rsb_swift_mvvm_table_module](rsb_swift_mvvm_table_module/rsb_swift_mvvm_table_module.rambaspec)
+- [rsb_swift_route](rsb_swift_route/rsb_swift_route.rambaspec)
 
 ### Objective-C:
 - [rsb_objc_viper_controller](sb_objc_viper_controller/rsb_objc_viper_controller.rambaspec)

@@ -3,13 +3,13 @@
 import UIKit
 import TableViewTools
 
-final class {{ prefix }}{{ module_info.name }}TableViewCellItem: TableViewCellItemProtocol {
+final class {{ module_info.name }}TableViewCellItem: TableViewCellItemProtocol {
     
-    private let viewModel: {{ prefix }}{{ module_info.name }}TableViewCellModel
+    private let viewModel: {{ module_info.name }}TableViewCellModel
     
-    var reuseType = ReuseType(cellClass: {{ prefix }}{{ module_info.name }}TableViewCell.self)
+    var reuseType = ReuseType(cellClass: {{ module_info.name }}TableViewCell.self)
     
-    init(viewModel: {{ prefix }}{{ module_info.name }}TableViewCellModel) {
+    init(viewModel: {{ module_info.name }}TableViewCellModel) {
         self.viewModel = viewModel
     }
     
@@ -18,7 +18,7 @@ final class {{ prefix }}{{ module_info.name }}TableViewCellItem: TableViewCellIt
     }
     
     func cell(for tableView: UITableView, at indexPath: IndexPath) -> UITableViewCell {
-        let cell: {{ prefix }}{{ module_info.name }}TableViewCell = tableView.dequeueReusableCell()
+        let cell: {{ module_info.name }}TableViewCell = tableView.dequeueReusableCell()
         return cell
     }
 }

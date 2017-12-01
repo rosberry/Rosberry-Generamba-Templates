@@ -3,13 +3,13 @@
 import UIKit
 import CollectionViewTools
 
-final class {{ prefix }}{{ module_info.name }}CollectionViewCellItem: CollectionViewCellItemProtocol {
+final class {{ module_info.name }}CollectionViewCellItem: CollectionViewCellItemProtocol {
     
-    private let viewModel: {{ prefix }}{{ module_info.name }}CollectionViewCellModel
+    private let viewModel: {{ module_info.name }}CollectionViewCellModel
     
-    var reuseType = ReuseType(cellClass: {{ prefix }}{{ module_info.name }}CollectionViewCell.self)
+    var reuseType = ReuseType(cellClass: {{ module_info.name }}CollectionViewCell.self)
     
-    init(viewModel: {{ prefix }}{{ module_info.name }}CollectionViewCellModel) {
+    init(viewModel: {{ module_info.name }}CollectionViewCellModel) {
         self.viewModel = viewModel
     }
     
@@ -18,7 +18,7 @@ final class {{ prefix }}{{ module_info.name }}CollectionViewCellItem: Collection
     }
     
     func cell(for collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: {{ prefix }}{{ module_info.name }}CollectionViewCell = collectionView.dequeueReusableCell()
+        let cell: {{ module_info.name }}CollectionViewCell = collectionView.dequeueReusableCell()
         return cell
     }
 }

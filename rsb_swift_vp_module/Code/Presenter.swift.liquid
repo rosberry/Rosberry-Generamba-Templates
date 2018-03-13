@@ -1,0 +1,27 @@
+{% include 'header' %}
+
+typealias {{ prefix }}{{ module_info.name }}Dependencies = Any
+
+final class {{ prefix }}{{ module_info.name }}Presenter {
+
+    private let dependencies: {{ prefix }}{{ module_info.name }}Dependencies
+    var view: {{ prefix }}{{ module_info.name }}ViewController!
+
+    weak var output: {{ prefix }}{{ module_info.name }}ModuleOutput?
+    
+    // MARK: - Lifecycle
+
+    init(dependencies: {{ prefix }}{{ module_info.name }}Dependencies) {
+        self.dependencies = dependencies
+    }
+
+    func viewReadyEventTriggered() {
+        
+    }
+}
+
+// MARK: - {{ prefix }}{{ module_info.name }}ModuleInput
+
+extension {{ prefix }}{{ module_info.name }}Presenter: {{ prefix }}{{ module_info.name }}ModuleInput {
+	
+}

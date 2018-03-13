@@ -1,0 +1,31 @@
+{% include 'header' %}
+
+protocol {{ prefix }}{{ module_info.name }}ModuleInput: class {
+}
+
+protocol {{ prefix }}{{ module_info.name }}ModuleOutput: class {
+}
+
+final class {{ prefix }}{{ module_info.name }}Module {
+
+    var input: {{ prefix }}{{ module_info.name }}ModuleInput {
+        return presenter
+    }
+    var output: {{ prefix }}{{ module_info.name }}ModuleOutput? {
+        get {
+            return presenter.output
+        }
+        set {
+            presenter.output = newValue
+        }
+    }
+    let viewController: {{ prefix }}{{ module_info.name }}ViewController
+    private let presenter: {{ prefix }}{{ module_info.name }}Presenter
+
+    init() {
+        let dependencies = [Any]()
+        presenter = {{ prefix }}{{ module_info.name }}Presenter(dependencies: dependencies)
+        viewController = {{ prefix }}{{ module_info.name }}ViewController(presenter: presenter)
+        presenter.view = viewController
+    }
+}

@@ -1,6 +1,6 @@
 {% include 'header' %}
 
-protocol {{ module_info.name }}ViewModelDelegate: class {
+protocol {{ module_info.name }}ViewModelDelegate: AnyObject {
 
     func update(animated: Bool)
 }

@@ -1,9 +1,8 @@
 {% include 'header' %}
 
-protocol {{ prefix }}{{ module_info.name }}ModuleInput: class {
+protocol {{ prefix }}{{ module_info.name }}ModuleInput: AnyObject {
 }
 
-protocol {{ prefix }}{{ module_info.name }}ModuleOutput: class {
 }
 
 final class {{ prefix }}{{ module_info.name }}Module {

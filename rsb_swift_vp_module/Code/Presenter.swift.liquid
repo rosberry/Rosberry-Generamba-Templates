@@ -5,15 +5,7 @@ typealias {{ prefix }}{{ module_info.name }}Dependencies = Any
 final class {{ prefix }}{{ module_info.name }}Presenter {
 
     private let dependencies: {{ prefix }}{{ module_info.name }}Dependencies
-    private weak var _view: {{ prefix }}{{ module_info.name }}ViewController?
-    var view: {{ prefix }}{{ module_info.name }}ViewController {
-        get {
-            return _view!
-        }
-        set {
-            _view = newValue
-        }
-    }
+    var view: {{ prefix }}{{ module_info.name }}ViewController?
 
     weak var output: {{ prefix }}{{ module_info.name }}ModuleOutput?
     

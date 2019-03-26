@@ -1,0 +1,13 @@
+# Template information section
+name: "rsb_swift_mvp_di_module"
+summary: "MVP swift module template"
+author: "Evgeny Mikhaylov"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: Module.swift, path: Code/Module.swift.liquid}
+- {name: ViewController.swift, path: Code/ViewController.swift.liquid}
+- {name: Presenter.swift, path: Code/Presenter.swift.liquid}
+- {name: State/State.swift, path: Code/State/State.swift.liquid}

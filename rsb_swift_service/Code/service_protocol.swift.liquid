@@ -1,9 +1,0 @@
-{% include 'header' %}
-
-protocol Has{{ module_info.name }} {
-    var {{ module_info.name | downcase }}: {{ module_info.name }}Protocol { get }
-}
-
-protocol {{ module_info.name }}Protocol: AnyObject {
-
-}

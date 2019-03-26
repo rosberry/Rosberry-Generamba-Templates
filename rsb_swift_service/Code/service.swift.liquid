@@ -1,5 +1,10 @@
 {% include 'header' %}
 
-final class {{ module_info.name }}: {{ module_info.name }}Protocol {
+protocol Has{{ module_info.name }} {
+	
+    var {{ module_info.name }}: {{ module_info.name }} { get }
+}
+
+protocol {{ module_info.name }}: class {
 
 }

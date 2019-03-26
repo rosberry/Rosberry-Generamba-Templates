@@ -7,5 +7,5 @@ license: "MIT"
 
 # The declarations for code files
 code_files:
-- {name: Protocol.swift, path: Code/service_protocol.swift.liquid}
 - {name: .swift, path: Code/service.swift.liquid}
+- {name: Imp.swift, path: Code/service_imp.swift.liquid}

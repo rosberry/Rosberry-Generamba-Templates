@@ -16,7 +16,7 @@ final class {{ prefix }}{{ module_info.name }}Module {
     var input: {{ prefix }}{{ module_info.name }}ModuleInput {
         return presenter
     }
-    weak var output: {{ prefix }}{{ module_info.name }}ModuleOutput? {
+    var output: {{ prefix }}{{ module_info.name }}ModuleOutput? {
         get {
             return presenter.output
         }

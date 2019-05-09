@@ -2,9 +2,15 @@
 
 import CollectionViewTools
 
+<<<<<<< HEAD
 final class {{ module_info.name }}CollectionViewCellItem: CollectionViewDiffableCellItem {
 
     private typealias Cell = {{ module_info.name }}CollectionViewCell
+=======
+final class {{ module_info.name }}CellItem: CollectionViewDiffableCellItem {
+
+    private typealias Cell = {{ module_info.name }}Cell
+>>>>>>> 9d9162a3708e83d7b6caef24904c30a6954a34ae
 
     lazy var identifier: String = ""
     let reuseType: ReuseType = .class(Cell.self)
@@ -23,7 +29,11 @@ final class {{ module_info.name }}CollectionViewCellItem: CollectionViewDiffable
     }
 
     func equal(to item: CollectionViewDiffableItem) -> Bool {
+<<<<<<< HEAD
         guard let rhs = item as? {{ module_info.name }}CollectionViewCellItem else {
+=======
+        guard let rhs = item as? {{ module_info.name }}CellItem else {
+>>>>>>> 9d9162a3708e83d7b6caef24904c30a6954a34ae
             return false
         }
         return true

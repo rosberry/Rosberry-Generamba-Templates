@@ -67,6 +67,6 @@ extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInput,
         let oldViewModel = self.viewModel
         self.viewModel = viewModel
 
-        collectionViewManager.update(with: viewModel.sectionItems, animated: animated)
+        collectionViewManager.update(with: viewModel.listSectionItems, animated: animated)
     }
 }

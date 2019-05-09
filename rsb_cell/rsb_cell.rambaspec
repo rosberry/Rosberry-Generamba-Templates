@@ -1,0 +1,11 @@
+# Template information section
+name: "rsb_cell"
+summary: "CollectionViewCellItem template."
+author: "Rosberry"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: CollectionViewCell.swift, path: Code/cell.swift.liquid}
+- {name: CollectionViewCellItem.swift, path: Code/cell_item.swift.liquid}

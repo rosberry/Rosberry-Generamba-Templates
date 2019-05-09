@@ -1,0 +1,11 @@
+# Template information section
+name: "rsb_service"
+summary: "Template of service for DI container."
+author: "Rosberry"
+version: "1.0.1"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: .swift, path: Code/service.swift.liquid}
+- {name: Imp.swift, path: Code/service_imp.swift.liquid}

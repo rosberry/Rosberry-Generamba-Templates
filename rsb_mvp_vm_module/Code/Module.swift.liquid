@@ -1,0 +1,38 @@
+{% include 'header' %}
+
+protocol {{ module_info.name }}ModuleInput: class {
+
+    var state: {{ module_info.name }}State { get }
+    func update(force: Bool, animated: Bool)
+}
+
+protocol {{ module_info.name }}ModuleOutput: class {
+
+    func {{ module_info.name }}ModuleClosed(_ moduleInput: {{ module_info.name }}ModuleInput)
+}
+
+final class {{ module_info.name }}Module {
+
+    var input: {{ module_info.name }}ModuleInput {
+        return presenter
+    }
+    var output: {{ module_info.name }}ModuleOutput? {
+        get {
+            return presenter.output
+        }
+        set {
+            presenter.output = newValue
+        }
+    }
+    let viewController: {{ module_info.name }}ViewController
+    private let presenter: {{ module_info.name }}Presenter
+
+    init(state: {{ module_info.name }}State = .init()) {
+        let presenter = {{ module_info.name }}Presenter(state: state, dependencies: [Any]())
+        let viewModel = {{ module_info.name }}ViewModel(state: state)
+        let viewController = {{ module_info.name }}ViewController(viewModel: viewModel, output: presenter)
+        presenter.view = viewController
+        self.viewController = viewController
+        self.presenter = presenter
+    }
+}

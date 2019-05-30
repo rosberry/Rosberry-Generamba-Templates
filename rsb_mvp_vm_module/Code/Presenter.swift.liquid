@@ -1,0 +1,37 @@
+{% include 'header' %}
+
+final class {{ module_info.name }}Presenter {
+
+    typealias Dependencies = Any
+
+    weak var view: {{ module_info.name }}ViewInput?
+    weak var output: {{ module_info.name }}ModuleOutput?
+
+    var state: {{ module_info.name }}State
+
+    private let dependencies: Dependencies
+
+    init(state: {{ module_info.name }}State, dependencies: Dependencies) {
+        self.state = state
+        self.dependencies = dependencies
+    }
+}
+
+// MARK: - {{ module_info.name }}ViewOutput
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
+
+    func viewDidLoad() {
+        update(force: true, animated: false)
+    }
+}
+
+// MARK: - {{ module_info.name }}ModuleInput
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput {
+
+    func update(force: Bool = false, animated: Bool) {
+        let viewModel = {{ module_info.name }}ViewModel(state: state)
+        view?.update(with: viewModel, force: force, animated: animated)
+    }
+}

@@ -1,0 +1,14 @@
+# Template information section
+name: "rsb_mvp_vm_module"
+summary: "MVP + ViewModel presentation module template"
+author: "Rosberry"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: Module.swift, path: Code/Module.swift.liquid}
+- {name: ViewController.swift, path: Code/ViewController.swift.liquid}
+- {name: ViewModel.swift, path: Code/ViewModel.swift.liquid}
+- {name: Presenter.swift, path: Code/Presenter.swift.liquid}
+- {name: State.swift, path: Code/State.swift.liquid}

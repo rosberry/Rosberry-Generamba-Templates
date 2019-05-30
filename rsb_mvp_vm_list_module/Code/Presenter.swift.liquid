@@ -1,0 +1,41 @@
+{% include 'header' %}
+
+final class {{ module_info.name }}Presenter {
+
+    typealias Dependencies = Any
+
+    weak var view: {{ module_info.name }}ViewInput?
+    weak var output: {{ module_info.name }}ModuleOutput?
+
+    var state: {{ module_info.name }}State
+
+    private let dependencies: Dependencies
+    private let listItemsFactory: {{ module_info.name }}ListItemsFactory
+
+    init(state: {{ module_info.name }}State,
+         dependencies: Dependencies,
+         listItemsFactory: {{ module_info.name }}ListItemsFactory) {
+        self.state = state
+        self.dependencies = dependencies
+        self.listItemsFactory = listItemsFactory
+    }
+}
+
+// MARK: - {{ module_info.name }}ViewOutput
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
+
+    func viewDidLoad() {
+        update(force: true, animated: false)
+    }
+}
+
+// MARK: - {{ module_info.name }}ModuleInput
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput {
+
+    func update(force: Bool = false, animated: Bool) {
+        let viewModel = {{ module_info.name }}ViewModel(state: state, listItemsFactory: listItemsFactory)
+        view?.update(with: viewModel, force: force, animated: animated)
+    }
+}

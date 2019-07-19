@@ -2,7 +2,9 @@
 
 import CollectionViewTools
 
-final class {{ module_info.name }}CollectionViewCellItem: CollectionViewDiffableCellItem {
+final class {{ module_info.name }}CollectionViewCellItem: CollectionViewDiffCellItem {
+
+    var diffIdentifier: String = ""
 
     private typealias Cell = {{ module_info.name }}CollectionViewCell
 
@@ -22,7 +24,7 @@ final class {{ module_info.name }}CollectionViewCellItem: CollectionViewDiffable
         return CGSize(width: collectionView.bounds.width, height: 50)
     }
 
-    func equal(to item: CollectionViewDiffableItem) -> Bool {
+    func equal(to item: DiffItem) -> Bool {
         guard let rhs = item as? {{ module_info.name }}CollectionViewCellItem else {
             return false
         }

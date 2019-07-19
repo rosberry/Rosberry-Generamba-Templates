@@ -8,7 +8,6 @@ final class {{ module_info.name }}CollectionViewCellItem: CollectionViewDiffCell
 
     private typealias Cell = {{ module_info.name }}CollectionViewCell
 
-    lazy var identifier: String = ""
     let reuseType: ReuseType = .class(Cell.self)
 
     func configure(_ cell: UICollectionViewCell) {

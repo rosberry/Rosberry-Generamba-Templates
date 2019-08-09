@@ -4,9 +4,9 @@ import CollectionViewTools
 
 final class {{ module_info.name }}CollectionViewCellItem: CollectionViewDiffCellItem {
 
-    let diffIdentifier: String = ""
-
     private typealias Cell = {{ module_info.name }}CollectionViewCell
+
+    let diffIdentifier: String = ""
 
     let reuseType: ReuseType = .class(Cell.self)
 

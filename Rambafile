@@ -27,5 +27,3 @@ templates:
 - {name: rsb_mvp_vm_module}
 - {name: rsb_service}
 - {name: rsb_cell}
-
-

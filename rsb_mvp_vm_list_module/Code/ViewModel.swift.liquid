@@ -7,6 +7,6 @@ final class {{ module_info.name }}ViewModel {
     let listSectionItems: [GeneralCollectionViewDiffSectionItem]
 
     init(state: {{ module_info.name }}State, listItemsFactory: {{ module_info.name }}ListItemsFactory) {
-    	listSectionItems = listItemsFactory.makeSectionItems(state: state)
+        listSectionItems = listItemsFactory.makeSectionItems(state: state)
     }
 }

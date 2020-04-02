@@ -47,6 +47,8 @@ extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInput,
         let oldViewModel = self.viewModel
         self.viewModel = viewModel
 
-        // update view
+        func updateViewModel<Value: Equatable>(_ keyPath: KeyPath<SearchViewModel, Value>, configurationBlock: (Value) -> Void) {
+            update(new: viewModel, old: oldViewModel, keyPath: keyPath, force: force, configurationBlock: configurationBlock)
+        }
     }
 }
